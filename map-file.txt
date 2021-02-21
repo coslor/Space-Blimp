@@ -1,0 +1,713 @@
+Modules list:
+-------------
+space blimp.o:
+    CODE              Offs=000000  Size=00077B  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=0000F6  Align=00001  Fill=0000
+    BSS               Offs=000000  Size=000020  Align=00001  Fill=0000
+    DATA              Offs=000000  Size=000006  Align=00001  Fill=0000
+loadbin.o:
+    CODE              Offs=00077B  Size=000089  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_directerrno.o):
+    CODE              Offs=000804  Size=00000A  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_file.o):
+    DATA              Offs=000006  Size=00001E  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_hextab.o):
+    RODATA            Offs=0000F6  Size=000010  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_longminstr.o):
+    RODATA            Offs=000106  Size=00000C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_mappederrno.o):
+    CODE              Offs=00080E  Size=000010  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_oserror.o):
+    BSS               Offs=000020  Size=000001  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_printf.o):
+    CODE              Offs=00081E  Size=0003A5  Align=00001  Fill=0000
+    BSS               Offs=000021  Size=00002B  Align=00001  Fill=0000
+    DATA              Offs=000024  Size=000003  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(_seterrno.o):
+    CODE              Offs=000BC3  Size=000009  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(add.o):
+    CODE              Offs=000BCC  Size=00001C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(addeqsp.o):
+    CODE              Offs=000BE8  Size=000011  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(addysp.o):
+    CODE              Offs=000BF9  Size=00000E  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(and.o):
+    CODE              Offs=000C07  Size=000010  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(aslax1.o):
+    CODE              Offs=000C17  Size=000008  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(aslax4.o):
+    CODE              Offs=000C1F  Size=000011  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(axlong.o):
+    CODE              Offs=000C30  Size=00000D  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(callmain.o):
+    CODE              Offs=000C3D  Size=000017  Align=00001  Fill=0000
+    DATA              Offs=000027  Size=000004  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(condes.o):
+    CODE              Offs=000C54  Size=00000C  Align=00001  Fill=0000
+    DATA              Offs=00002B  Size=000025  Align=00001  Fill=0000
+    ONCE              Offs=000000  Size=00000C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(crt0.o):
+    STARTUP           Offs=000000  Size=000033  Align=00001  Fill=0000
+    ONCE              Offs=00000C  Size=00001A  Align=00001  Fill=0000
+    INIT              Offs=000000  Size=00001C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(ctype.o):
+    RODATA            Offs=000112  Size=00008B  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(ctypemask.o):
+    CODE              Offs=000C60  Size=00001E  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(decsp1.o):
+    CODE              Offs=000C7E  Size=000009  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(decsp2.o):
+    CODE              Offs=000C87  Size=00000D  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(decsp4.o):
+    CODE              Offs=000C94  Size=00000D  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(decsp6.o):
+    CODE              Offs=000CA1  Size=00000D  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(div.o):
+    CODE              Offs=000CAE  Size=000015  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(errno.o):
+    BSS               Offs=00004C  Size=000002  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(exehdr.o):
+    EXEHDR            Offs=000000  Size=00000C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(filedes.o):
+    CODE              Offs=000CC3  Size=00000E  Align=00001  Fill=0000
+    DATA              Offs=000050  Size=000010  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(fwrite.o):
+    CODE              Offs=000CD1  Size=00007B  Align=00001  Fill=0000
+    BSS               Offs=00004E  Size=000002  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(incsp1.o):
+    CODE              Offs=000D4C  Size=000007  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(incsp2.o):
+    CODE              Offs=000D53  Size=000016  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(incsp3.o):
+    CODE              Offs=000D69  Size=000005  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(incsp4.o):
+    CODE              Offs=000D6E  Size=000005  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(incsp5.o):
+    CODE              Offs=000D73  Size=000005  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(incsp6.o):
+    CODE              Offs=000D78  Size=000005  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(jmpvec.o):
+    DATA              Offs=000060  Size=000003  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(kernal.o):
+c:\Users\chris\cc65/lib/c64.lib(ldai.o):
+    CODE              Offs=000D7D  Size=00000C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(ldaui.o):
+    CODE              Offs=000D89  Size=000009  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(ldaxi.o):
+    CODE              Offs=000D92  Size=00000D  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(ldaxsp.o):
+    CODE              Offs=000D9F  Size=000009  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(lneg.o):
+    CODE              Offs=000DA8  Size=00001E  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(loadaddr.o):
+    LOADADDR          Offs=000000  Size=000002  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(lpush.o):
+    CODE              Offs=000DC6  Size=000021  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(ltoa.o):
+    CODE              Offs=000DE7  Size=000095  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(mainargs.o):
+    DATA              Offs=000063  Size=000016  Align=00001  Fill=0000
+    ONCE              Offs=000026  Size=000069  Align=00001  Fill=0000
+    INIT              Offs=00001C  Size=000012  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(makebool.o):
+    CODE              Offs=000E7C  Size=00002C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(mul.o):
+    CODE              Offs=000EA8  Size=000045  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(mul8.o):
+    CODE              Offs=000EED  Size=00003A  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(negabs.o):
+    CODE              Offs=000F27  Size=000012  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(or.o):
+    CODE              Offs=000F39  Size=000012  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(oserror.o):
+    CODE              Offs=000F4B  Size=000016  Align=00001  Fill=0000
+    RODATA            Offs=00019D  Size=00005A  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(popa.o):
+    CODE              Offs=000F61  Size=00000C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(popptr1.o):
+    CODE              Offs=000F6D  Size=00000E  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(printf.o):
+    CODE              Offs=000F7B  Size=000033  Align=00001  Fill=0000
+    BSS               Offs=000050  Size=000001  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(push1.o):
+    CODE              Offs=000FAE  Size=000005  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(pusha.o):
+    CODE              Offs=000FB3  Size=000016  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(pushax.o):
+    CODE              Offs=000FC9  Size=00001A  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(pushwsp.o):
+    CODE              Offs=000FE3  Size=00001C  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(rwcommon.o):
+    CODE              Offs=000FFF  Size=00001A  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(shelp.o):
+    CODE              Offs=001019  Size=000020  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(staspidx.o):
+    CODE              Offs=001039  Size=000016  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(status.o):
+c:\Users\chris\cc65/lib/c64.lib(staxsp.o):
+    CODE              Offs=00104F  Size=00000B  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(staxspi.o):
+    CODE              Offs=00105A  Size=00001B  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(strlen.o):
+    CODE              Offs=001075  Size=000016  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(strlower.o):
+    CODE              Offs=00108B  Size=000027  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(sub.o):
+    CODE              Offs=0010B2  Size=000015  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(udiv.o):
+    CODE              Offs=0010C7  Size=00004F  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(vfprintf.o):
+    CODE              Offs=001116  Size=000061  Align=00001  Fill=0000
+    DATA              Offs=000079  Size=000008  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(write.o):
+    CODE              Offs=001177  Size=000054  Align=00001  Fill=0000
+    ONCE              Offs=00008F  Size=000011  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(zerobss.o):
+    CODE              Offs=0011CB  Size=000023  Align=00001  Fill=0000
+c:\Users\chris\cc65/lib/c64.lib(zeropage.o):
+    ZEROPAGE          Offs=000000  Size=00001A  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+ZEROPAGE              000002  00001B  00001A  00001
+LOADADDR              0007FF  000800  000002  00001
+EXEHDR                000801  00080C  00000C  00001
+STARTUP               00080D  00083F  000033  00001
+CODE                  000840  001A2D  0011EE  00001
+RODATA                001A2E  001C24  0001F7  00001
+DATA                  001C25  001CA5  000081  00001
+INIT                  001CA6  001CD3  00002E  00001
+BSS                   001CD4  001D24  000051  00001
+ONCE                  001CD4  001D77  0000A4  00001
+
+
+Exports list by name:
+---------------------
+BSOUT                     00FFD2 RLA    CKOUT                     00FFC9 RLA    
+CLRCH                     00FFCC RLA    OPEN                      00FFC0 RLA    
+READST                    00FFB7 RLA    SETLFS                    00FFBA RLA    
+ST                        000090 RLZ    __BSS_RUN__               001CD4 RLA    
+__BSS_SIZE__              000051 REA    __CONSTRUCTOR_COUNT__     000002 REA    
+__CONSTRUCTOR_TABLE__     001D74 RLA    __DESTRUCTOR_COUNT__      000000 REA    
+__DESTRUCTOR_TABLE__      001C25 RLA    __EXEHDR__                000001 REA    
+__HEADER_LAST__           00080D RLA    __HIMEM__                 00D000 REA    
+__LOADADDR__              000001 REA    __MAIN_SIZE__             00C7F3 REA    
+__MAIN_START__            00080D RLA    __ONCE_RUN__              001CD4 RLA    
+__STACKSIZE__             000800 REA    __STARTUP__               000001 REA    
+__argc                    001C4C RLA    __argv                    001C4E RLA    
+__ctype                   001B40 RLA    __ctypeidx                001B4B RLA    
+__directerrno             001044 RLA    __errno                   001D20 RLA    
+__hextab                  001B24 RLA    __longminstr              001B34 RLA    
+__mappederrno             00104E RLA    __oserror                 001CF4 RLA    
+__osmaperrno              00178B RLA    __printf                  001151 RLA    
+__seterrno                001403 RLA    _exit                     000825 RLA    
+_fwrite                   001511 RLA    _loadbin                  000FBB RLA    
+_ltoa                     00163F RLA    _main                     000E4A RLA    
+_printf                   0017BB RLA    _stdout                   001C45 RLA    
+_strlen                   0018B5 RLA    _strlower                 0018CB RLA    
+_ultoa                    001680 RLA    _vfprintf                 00198E RLA    
+_write                    0019B7 RLA    addeqysp                  00142A RLA    
+addysp                    00143A RLA    addysp1                   001439 RLA    
+aslax1                    001457 RLA    aslax4                    00145F RLA    
+axlong                    001470 RLA    axulong                   001476 RLA    
+booleq                    0016C2 RLA    boolne                    0016BC RLA    
+boolult                   0016DB RLA    callmain                  00147D RLA    
+ctypemaskdirect           0014A4 RLA    decsp1                    0014BE RLA    
+decsp2                    0014C7 RLA    decsp4                    0014D4 RLA    
+decsp6                    0014E1 RLA    donelib                   001494 RLA    
+fdtab                     001C75 RLA    incsp1                    00158C RLA    
+incsp2                    00159B RLA    incsp3                    0015A9 RLA    
+incsp4                    0015AE RLA    incsp5                    0015B3 RLA    
+incsp6                    0015B8 RLA    initlib                   001CD4 RLA    
+initmainargs              001CFA RLAI   initstdout                001D63  LAI   
+jmpvec                    001C85 RLA    ldaidx                    0015BD RLA    
+ldauidx                   0015C9 RLA    ldaxidx                   0015D4 RLA    
+ldaxysp                   0015E1 RLA    mul8x16                   00172F RLA    
+mul8x16a                  001739 RLA    negax                     00176B RLA    
+negeax                    0015E8 RLA    popa                      0017A1 RLA    
+popax                     001593 RLA    popptr1                   0017AD RLA    
+popsargsudiv16            001859 RLA    ptr1                      00000A RLZ    
+ptr2                      00000C RLZ    ptr3                      00000E RLZ    
+ptr4                      000010 RLZ    push1                     0017EE RLA    
+pusha                     0017F7 RLA    pusha0                    00180B RLA    
+pushax                    00180D RLA    pusheax                   00160F RLA    
+pushwysp                  001825 RLA    regbank                   000016 RLZ    
+rwcommon                  00183F RLA    sp                        000002 RLZ    
+sreg                      000004 RLZ    staspidx                  001879 RLA    
+staxspidx                 00189A RLA    staxysp                   001891 RLA    
+tmp1                      000012 RLZ    tmp2                      000013 RLZ    
+tosaddax                  00140E RLA    tosandax                  001449 RLA    
+tosdivax                  0014F0 RLA    tosorax                   00177B RLA    
+tossubax                  0018F4 RLA    tosudivax                 001909 RLA    
+tosumulax                 0016E8 RLA    udiv16                    001918 RLA    
+zerobss                   001A0B RLA    
+
+
+Exports list by value:
+----------------------
+__DESTRUCTOR_COUNT__      000000 REA    __LOADADDR__              000001 REA    
+__STARTUP__               000001 REA    __EXEHDR__                000001 REA    
+__CONSTRUCTOR_COUNT__     000002 REA    sp                        000002 RLZ    
+sreg                      000004 RLZ    ptr1                      00000A RLZ    
+ptr2                      00000C RLZ    ptr3                      00000E RLZ    
+ptr4                      000010 RLZ    tmp1                      000012 RLZ    
+tmp2                      000013 RLZ    regbank                   000016 RLZ    
+__BSS_SIZE__              000051 REA    ST                        000090 RLZ    
+__STACKSIZE__             000800 REA    __HEADER_LAST__           00080D RLA    
+__MAIN_START__            00080D RLA    _exit                     000825 RLA    
+_main                     000E4A RLA    _loadbin                  000FBB RLA    
+__directerrno             001044 RLA    __mappederrno             00104E RLA    
+__printf                  001151 RLA    __seterrno                001403 RLA    
+tosaddax                  00140E RLA    addeqysp                  00142A RLA    
+addysp1                   001439 RLA    addysp                    00143A RLA    
+tosandax                  001449 RLA    aslax1                    001457 RLA    
+aslax4                    00145F RLA    axlong                    001470 RLA    
+axulong                   001476 RLA    callmain                  00147D RLA    
+donelib                   001494 RLA    ctypemaskdirect           0014A4 RLA    
+decsp1                    0014BE RLA    decsp2                    0014C7 RLA    
+decsp4                    0014D4 RLA    decsp6                    0014E1 RLA    
+tosdivax                  0014F0 RLA    _fwrite                   001511 RLA    
+incsp1                    00158C RLA    popax                     001593 RLA    
+incsp2                    00159B RLA    incsp3                    0015A9 RLA    
+incsp4                    0015AE RLA    incsp5                    0015B3 RLA    
+incsp6                    0015B8 RLA    ldaidx                    0015BD RLA    
+ldauidx                   0015C9 RLA    ldaxidx                   0015D4 RLA    
+ldaxysp                   0015E1 RLA    negeax                    0015E8 RLA    
+pusheax                   00160F RLA    _ltoa                     00163F RLA    
+_ultoa                    001680 RLA    boolne                    0016BC RLA    
+booleq                    0016C2 RLA    boolult                   0016DB RLA    
+tosumulax                 0016E8 RLA    mul8x16                   00172F RLA    
+mul8x16a                  001739 RLA    negax                     00176B RLA    
+tosorax                   00177B RLA    __osmaperrno              00178B RLA    
+popa                      0017A1 RLA    popptr1                   0017AD RLA    
+_printf                   0017BB RLA    push1                     0017EE RLA    
+pusha                     0017F7 RLA    pusha0                    00180B RLA    
+pushax                    00180D RLA    pushwysp                  001825 RLA    
+rwcommon                  00183F RLA    popsargsudiv16            001859 RLA    
+staspidx                  001879 RLA    staxysp                   001891 RLA    
+staxspidx                 00189A RLA    _strlen                   0018B5 RLA    
+_strlower                 0018CB RLA    tossubax                  0018F4 RLA    
+tosudivax                 001909 RLA    udiv16                    001918 RLA    
+_vfprintf                 00198E RLA    _write                    0019B7 RLA    
+zerobss                   001A0B RLA    __hextab                  001B24 RLA    
+__longminstr              001B34 RLA    __ctype                   001B40 RLA    
+__ctypeidx                001B4B RLA    __DESTRUCTOR_TABLE__      001C25 RLA    
+_stdout                   001C45 RLA    __argc                    001C4C RLA    
+__argv                    001C4E RLA    fdtab                     001C75 RLA    
+jmpvec                    001C85 RLA    initlib                   001CD4 RLA    
+__BSS_RUN__               001CD4 RLA    __ONCE_RUN__              001CD4 RLA    
+__oserror                 001CF4 RLA    initmainargs              001CFA RLAI   
+__errno                   001D20 RLA    initstdout                001D63  LAI   
+__CONSTRUCTOR_TABLE__     001D74 RLA    __MAIN_SIZE__             00C7F3 REA    
+__HIMEM__                 00D000 REA    READST                    00FFB7 RLA    
+SETLFS                    00FFBA RLA    OPEN                      00FFC0 RLA    
+CKOUT                     00FFC9 RLA    CLRCH                     00FFCC RLA    
+BSOUT                     00FFD2 RLA    
+
+
+Imports list:
+-------------
+BSOUT (kernal.o):
+    write.o                   cbm/cbm.inc(49)
+    crt0.o                    c64/crt0.s(10)
+CKOUT (kernal.o):
+    write.o                   cbm/cbm.inc(45)
+CLRCH (kernal.o):
+    write.o                   cbm/cbm.inc(46)
+OPEN (kernal.o):
+    write.o                   cbm/cbm.inc(35)
+READST (kernal.o):
+    write.o                   cbm/cbm.inc(32)
+SETLFS (kernal.o):
+    write.o                   cbm/cbm.inc(33)
+ST (status.o):
+    crt0.o                    c64/crt0.s(13)
+__BSS_RUN__ ([linker generated]):
+    zerobss.o                 common/zerobss.s(8)
+__BSS_SIZE__ ([linker generated]):
+    zerobss.o                 common/zerobss.s(8)
+__CONSTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__CONSTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__DESTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__DESTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__EXEHDR__ (exehdr.o):
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(6)
+__HEADER_LAST__ ([linker generated]):
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(14)
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(14)
+__HIMEM__ ([linker generated]):
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(15)
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(14)
+__LOADADDR__ (loadaddr.o):
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(5)
+__MAIN_SIZE__ ([linker generated]):
+    crt0.o                    c64/crt0.s(11)
+__MAIN_START__ ([linker generated]):
+    crt0.o                    c64/crt0.s(11)
+__ONCE_RUN__ ([linker generated]):
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(15)
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(15)
+__STACKSIZE__ ([linker generated]):
+    [linker generated]        c:\Users\chris\cc65/cfg/c64.cfg(15)
+__STARTUP__ (crt0.o):
+    space blimp.o             space blimp.s(13)
+__argc (callmain.o):
+    mainargs.o                c64/mainargs.s(26)
+__argv (callmain.o):
+    mainargs.o                c64/mainargs.s(26)
+__ctype (ctype.o):
+    ctypemask.o               common/ctypemask.s(23)
+__ctypeidx (ctype.o):
+    ctypemask.o               common/ctypemask.s(24)
+__directerrno (_directerrno.o):
+    write.o                   /home/travis/build/cc65/cc65/asminc/errno.inc(10)
+__errno (errno.o):
+    _seterrno.o               /home/travis/build/cc65/cc65/asminc/errno.inc(7)
+__hextab (_hextab.o):
+    ltoa.o                    common/ltoa.s(10)
+__longminstr (_longminstr.o):
+    ltoa.o                    common/ltoa.s(10)
+__mappederrno (_mappederrno.o):
+    write.o                   /home/travis/build/cc65/cc65/asminc/errno.inc(10)
+__oserror (_oserror.o):
+    _mappederrno.o            /home/travis/build/cc65/cc65/asminc/errno.inc(7)
+    _directerrno.o            /home/travis/build/cc65/cc65/asminc/errno.inc(7)
+    write.o                   /home/travis/build/cc65/cc65/asminc/errno.inc(7)
+__osmaperrno (oserror.o):
+    _mappederrno.o            /home/travis/build/cc65/cc65/asminc/errno.inc(8)
+__printf (_printf.o):
+    vfprintf.o                common/vfprintf.s(10)
+__seterrno (_seterrno.o):
+    _mappederrno.o            /home/travis/build/cc65/cc65/asminc/errno.inc(9)
+    _directerrno.o            /home/travis/build/cc65/cc65/asminc/errno.inc(9)
+    fwrite.o                  /home/travis/build/cc65/cc65/asminc/errno.inc(9)
+_exit (crt0.o):
+    space blimp.o             space blimp.s(17)
+_fwrite (fwrite.o):
+    vfprintf.o                common/vfprintf.s(10)
+_loadbin (loadbin.o):
+    space blimp.o             space blimp.s(19)
+_ltoa (ltoa.o):
+    _printf.o                 common/_printf.s(12)
+_main (space blimp.o):
+    callmain.o                runtime/callmain.s(11)
+_printf (printf.o):
+    space blimp.o             space blimp.s(15)
+_stdout (_file.o):
+    printf.o                  common/printf.s(8)
+_strlen (strlen.o):
+    _printf.o                 common/_printf.s(13)
+    space blimp.o             space blimp.s(16)
+_strlower (strlower.o):
+    _printf.o                 common/_printf.s(13)
+_ultoa (ltoa.o):
+    _printf.o                 common/_printf.s(12)
+_vfprintf (vfprintf.o):
+    printf.o                  common/printf.s(8)
+_write (write.o):
+    fwrite.o                  common/fwrite.s(10)
+addeqysp (addeqsp.o):
+    space blimp.o             space blimp.s(1058)
+addysp (addysp.o):
+    incsp6.o                  runtime/incsp6.s(8)
+    fwrite.o                  common/fwrite.s(11)
+    printf.o                  common/printf.s(8)
+    incsp5.o                  runtime/incsp5.s(8)
+    incsp4.o                  runtime/incsp4.s(8)
+    incsp3.o                  runtime/incsp3.s(8)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+addysp1 (addysp.o):
+    sub.o                     runtime/sub.s(8)
+    or.o                      runtime/or.s(9)
+    and.o                     runtime/and.s(8)
+aslax1 (aslax1.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+aslax4 (aslax4.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+axlong (axlong.o):
+    _printf.o                 common/_printf.s(11)
+axulong (axlong.o):
+    _printf.o                 common/_printf.s(11)
+booleq (makebool.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+boolne (makebool.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+boolult (makebool.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+callmain (callmain.o):
+    crt0.o                    c64/crt0.s(9)
+ctypemaskdirect (ctypemask.o):
+    strlower.o                common/strlower.s(14)
+decsp1 (decsp1.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+decsp2 (decsp2.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+decsp4 (decsp4.o):
+    lpush.o                   runtime/lpush.s(12)
+    space blimp.o             space blimp.s(1058)
+decsp6 (decsp6.o):
+    _printf.o                 common/_printf.s(11)
+donelib (condes.o):
+    crt0.o                    c64/crt0.s(8)
+fdtab (filedes.o):
+    write.o                   cbm/filedes.inc(7)
+incsp1 (incsp1.o):
+    space blimp.o             space blimp.s(1058)
+incsp2 (incsp2.o):
+    staxspi.o                 runtime/staxspi.s(9)
+    staspidx.o                runtime/staspidx.s(8)
+    popptr1.o                 runtime/popptr1.s(8)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+incsp3 (incsp3.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+incsp4 (incsp4.o):
+    space blimp.o             space blimp.s(1058)
+incsp5 (incsp5.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+incsp6 (incsp6.o):
+    fwrite.o                  common/fwrite.s(11)
+    vfprintf.o                common/vfprintf.s(9)
+initlib (condes.o):
+    crt0.o                    c64/crt0.s(8)
+initmainargs (mainargs.o):
+    space blimp.o             space blimp.s(14)
+jmpvec (jmpvec.o):
+    space blimp.o             space blimp.s(1058)
+ldaidx (ldai.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+ldauidx (ldaui.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+ldaxidx (ldaxi.o):
+    space blimp.o             space blimp.s(1058)
+ldaxysp (ldaxsp.o):
+    fwrite.o                  common/fwrite.s(11)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+mul8x16 (mul8.o):
+    mul.o                     runtime/mul.s(8)
+mul8x16a (mul8.o):
+    mul.o                     runtime/mul.s(8)
+negax (negabs.o):
+    shelp.o                   runtime/shelp.s(11)
+    div.o                     runtime/div.s(11)
+negeax (lneg.o):
+    ltoa.o                    common/ltoa.s(9)
+popa (popa.o):
+    loadbin.o                 loadbin.asm(10)
+popax (incsp2.o):
+    rwcommon.o                cbm/rwcommon.s(9)
+    ltoa.o                    common/ltoa.s(9)
+    _printf.o                 common/_printf.s(11)
+    shelp.o                   runtime/shelp.s(11)
+popptr1 (popptr1.o):
+    rwcommon.o                cbm/rwcommon.s(9)
+    mul8.o                    runtime/mul8.s(9)
+    mul.o                     runtime/mul.s(9)
+    ltoa.o                    common/ltoa.s(9)
+    udiv.o                    runtime/udiv.s(9)
+    loadbin.o                 loadbin.asm(10)
+popsargsudiv16 (shelp.o):
+    div.o                     runtime/div.s(11)
+ptr1 (zeropage.o):
+    write.o                   cbm/write.s(11)
+    strlower.o                common/strlower.s(13)
+    mul8.o                    runtime/mul8.s(10)
+    mul.o                     runtime/mul.s(10)
+    ltoa.o                    common/ltoa.s(11)
+    fwrite.o                  common/fwrite.s(14)
+    _printf.o                 /home/travis/build/cc65/cc65/asminc/zeropage.inc(12)
+    zerobss.o                 common/zerobss.s(9)
+    vfprintf.o                common/vfprintf.s(11)
+    udiv.o                    runtime/udiv.s(10)
+    staxspi.o                 runtime/staxspi.s(10)
+    staspidx.o                runtime/staspidx.s(9)
+    shelp.o                   runtime/shelp.s(12)
+    printf.o                  common/printf.s(9)
+    popptr1.o                 runtime/popptr1.s(9)
+    ldaxi.o                   runtime/ldaxi.s(8)
+    ldaui.o                   runtime/ldaui.s(8)
+    ldai.o                    runtime/ldai.s(8)
+    div.o                     runtime/div.s(12)
+    loadbin.o                 c:\Users\chris\cc65/asminc/zeropage.inc(12)
+ptr2 (zeropage.o):
+    rwcommon.o                cbm/rwcommon.s(10)
+    write.o                   cbm/write.s(11)
+    strlower.o                common/strlower.s(13)
+    ltoa.o                    common/ltoa.s(11)
+    _printf.o                 /home/travis/build/cc65/cc65/asminc/zeropage.inc(12)
+    strlen.o                  common/strlen.s(12)
+ptr3 (zeropage.o):
+    rwcommon.o                cbm/rwcommon.s(10)
+    write.o                   cbm/write.s(11)
+    ltoa.o                    common/ltoa.s(11)
+ptr4 (zeropage.o):
+    mul8.o                    runtime/mul8.s(10)
+    mul.o                     runtime/mul.s(10)
+    udiv.o                    runtime/udiv.s(10)
+    shelp.o                   runtime/shelp.s(12)
+push1 (push1.o):
+    _printf.o                 common/_printf.s(11)
+    vfprintf.o                common/vfprintf.s(9)
+pusha (pusha.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+pusha0 (pushax.o):
+    push1.o                   runtime/push1.s(8)
+pushax (pushax.o):
+    fwrite.o                  common/fwrite.s(11)
+    callmain.o                runtime/callmain.s(11)
+    _printf.o                 common/_printf.s(11)
+    printf.o                  common/printf.s(8)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+pusheax (lpush.o):
+    _printf.o                 common/_printf.s(11)
+pushwysp (pushwsp.o):
+    fwrite.o                  common/fwrite.s(11)
+    vfprintf.o                common/vfprintf.s(9)
+regbank (zeropage.o):
+    _printf.o                 /home/travis/build/cc65/cc65/asminc/zeropage.inc(14)
+rwcommon (rwcommon.o):
+    write.o                   cbm/write.s(10)
+sp (zeropage.o):
+    pushwsp.o                 runtime/pushwsp.s(8)
+    lpush.o                   runtime/lpush.s(13)
+    decsp6.o                  runtime/decsp6.s(8)
+    _printf.o                 /home/travis/build/cc65/cc65/asminc/zeropage.inc(11)
+    vfprintf.o                common/vfprintf.s(11)
+    sub.o                     runtime/sub.s(9)
+    staxspi.o                 runtime/staxspi.s(10)
+    staxsp.o                  runtime/staxsp.s(8)
+    staspidx.o                runtime/staspidx.s(9)
+    pushax.o                  runtime/pushax.s(8)
+    pusha.o                   runtime/pusha.s(8)
+    printf.o                  common/printf.s(9)
+    popptr1.o                 runtime/popptr1.s(9)
+    popa.o                    runtime/popa.s(8)
+    or.o                      runtime/or.s(10)
+    ldaxsp.o                  runtime/ldaxsp.s(8)
+    incsp2.o                  runtime/incsp2.s(8)
+    incsp1.o                  runtime/incsp1.s(8)
+    decsp4.o                  runtime/decsp4.s(8)
+    decsp2.o                  runtime/decsp2.s(8)
+    decsp1.o                  runtime/decsp1.s(8)
+    crt0.o                    /home/travis/build/cc65/cc65/asminc/zeropage.inc(11)
+    and.o                     runtime/and.s(9)
+    addysp.o                  runtime/addysp.s(8)
+    addeqsp.o                 runtime/addeqsp.s(8)
+    add.o                     runtime/add.s(12)
+    space blimp.o             space blimp.s(10)
+sreg (zeropage.o):
+    lneg.o                    runtime/lneg.s(11)
+    ltoa.o                    common/ltoa.s(11)
+    lpush.o                   runtime/lpush.s(13)
+    axlong.o                  runtime/axlong.s(9)
+    _printf.o                 /home/travis/build/cc65/cc65/asminc/zeropage.inc(11)
+    udiv.o                    runtime/udiv.s(10)
+staspidx (staspidx.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+staxspidx (staxspi.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+staxysp (staxsp.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+tmp1 (zeropage.o):
+    mul.o                     runtime/mul.s(10)
+    ltoa.o                    common/ltoa.s(11)
+    _printf.o                 /home/travis/build/cc65/cc65/asminc/zeropage.inc(13)
+    staxspi.o                 runtime/staxspi.s(10)
+    staspidx.o                runtime/staspidx.s(9)
+    shelp.o                   runtime/shelp.s(12)
+    or.o                      runtime/or.s(10)
+    div.o                     runtime/div.s(12)
+    aslax4.o                  runtime/aslax4.s(8)
+    aslax1.o                  runtime/aslax1.s(8)
+    add.o                     runtime/add.s(12)
+tmp2 (zeropage.o):
+    rwcommon.o                cbm/rwcommon.s(10)
+    shelp.o                   runtime/shelp.s(12)
+    div.o                     runtime/div.s(12)
+tosaddax (add.o):
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+    space blimp.o             space blimp.s(1058)
+tosandax (and.o):
+    space blimp.o             space blimp.s(1058)
+tosdivax (div.o):
+    space blimp.o             space blimp.s(1058)
+tosorax (or.o):
+    space blimp.o             space blimp.s(1058)
+tossubax (sub.o):
+    space blimp.o             space blimp.s(1058)
+tosudivax (udiv.o):
+    fwrite.o                  common/fwrite.s(12)
+tosumulax (mul.o):
+    fwrite.o                  common/fwrite.s(12)
+udiv16 (udiv.o):
+    shelp.o                   runtime/shelp.s(11)
+zerobss (zerobss.o):
+    crt0.o                    c64/crt0.s(9)
+
