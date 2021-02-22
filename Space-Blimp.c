@@ -66,8 +66,8 @@ int main(int argc, char **argv)
 	
 	printf("Space Blimp, motha motha!!!\n");
 
-	x_counter.sprite_move_interval = 3;
-	y_counter.sprite_move_interval = 1;
+	x_counter.sprite_move_interval = 0;
+	y_counter.sprite_move_interval = 0;
 	
 	init_mobs();
 	draw_mobs();
@@ -181,12 +181,12 @@ void init_mobs() {
 	
 	//blimp
 	init_MOB(0, true, 0, true, blimp_ptrs,blimp_ptr_len,
-		16, false, 50, false, 1,1,COLOR_GRAY1,
+		16, false, 50, false, 2,0,COLOR_GRAY1,
 		&x_counter, &y_counter,
 		sprite_switching_bouncy_border_collision_handler, velocity_movement_handler);
 	//bomb
 	init_MOB(1, true, 1, true, bomb_ptrs,bomb_ptr_len,
-		16, false, 50, false, 1,1,COLOR_GRAY1,
+		16, false, 50, false, 2,0,COLOR_GRAY1,
 		&x_counter, &y_counter,
 		sprite_switching_bouncy_border_collision_handler, velocity_movement_handler);
 
