@@ -103,7 +103,7 @@ Current file: space-blimp.s
 000000r 2                       .endif
 000000r 2               .endmacro
 000000r 2               
-000000r 1               	.dbg		file, "space-blimp.c", 8536, 1614804912
+000000r 1               	.dbg		file, "space-blimp.c", 8718, 1614805921
 000000r 1               	.dbg		file, "C:\Users\chris\cc65/include/stdint.h", 6196, 1613281958
 000000r 1               	.dbg		file, "C:\Users\chris\cc65/include/stdio.h", 6189, 1613281958
 000000r 1               	.dbg		file, "C:\Users\chris\cc65/include/stddef.h", 3057, 1613281958
@@ -304,12 +304,12 @@ Current file: space-blimp.s
 000000r 1               
 000000r 1               .segment	"CODE"
 000000r 1               
-000000r 1               	.dbg	line, "space-blimp.c", 112
+000000r 1               	.dbg	line, "space-blimp.c", 119
 000000r 1  20 rr rr     	jsr     decsp2
 000003r 1  A2 00        	ldx     #$00
 000005r 1  A5 BA        	lda     $00BA
 000007r 1  20 rr rr     	jsr     stax0sp
-00000Ar 1               	.dbg	line, "space-blimp.c", 113
+00000Ar 1               	.dbg	line, "space-blimp.c", 120
 00000Ar 1  C9 08        	cmp     #$08
 00000Cr 1  8A           	txa
 00000Dr 1  E9 00        	sbc     #$00
@@ -327,17 +327,17 @@ Current file: space-blimp.s
 000022r 1  70 02        	bvs     L0005
 000024r 1  49 80        	eor     #$80
 000026r 1  10 0A        L0005:	bpl     L0002
-000028r 1               	.dbg	line, "space-blimp.c", 114
+000028r 1               	.dbg	line, "space-blimp.c", 121
 000028r 1  A0 00        L0007:	ldy     #$00
 00002Ar 1  A9 08        	lda     #$08
 00002Cr 1  91 rr        	sta     (sp),y
 00002Er 1  98           	tya
 00002Fr 1  C8           	iny
 000030r 1  91 rr        	sta     (sp),y
-000032r 1               	.dbg	line, "space-blimp.c", 117
+000032r 1               	.dbg	line, "space-blimp.c", 124
 000032r 1  A2 00        L0002:	ldx     #$00
 000034r 1  A1 rr        	lda     (sp,x)
-000036r 1               	.dbg	line, "space-blimp.c", 118
+000036r 1               	.dbg	line, "space-blimp.c", 125
 000036r 1  4C rr rr     	jmp     incsp2
 000039r 1               
 000039r 1               	.dbg	line
@@ -358,9 +358,9 @@ Current file: space-blimp.s
 000039r 1               
 000039r 1               .segment	"CODE"
 000039r 1               
-000039r 1               	.dbg	line, "space-blimp.c", 256
+000039r 1               	.dbg	line, "space-blimp.c", 263
 000039r 1  20 rr rr     	jsr     pushax
-00003Cr 1               	.dbg	line, "space-blimp.c", 259
+00003Cr 1               	.dbg	line, "space-blimp.c", 266
 00003Cr 1  20 rr rr     	jsr     decsp1
 00003Fr 1  A0 03        	ldy     #$03
 000041r 1  A2 00        	ldx     #$00
@@ -371,9 +371,9 @@ Current file: space-blimp.s
 00004Br 1  A2 rr        	ldx     #>(S000C)
 00004Dr 1  20 rr rr     	jsr     pushax
 000050r 1  A2 01        	ldx     #$01
-000052r 1  A9 03        	lda     #$03
+000052r 1  A9 0A        	lda     #$0A
 000054r 1  20 rr rr     	jsr     __afailed
-000057r 1               	.dbg	line, "space-blimp.c", 261
+000057r 1               	.dbg	line, "space-blimp.c", 268
 000057r 1  A0 03        	ldy     #$03
 000059r 1  A2 00        	ldx     #$00
 00005Br 1  B1 rr        L000A:	lda     (sp),y
@@ -389,7 +389,7 @@ Current file: space-blimp.s
 00006Br 1  B1 rr        	lda     (sp),y
 00006Dr 1  88           	dey
 00006Er 1  91 rr        	sta     (ptr1),y
-000070r 1               	.dbg	line, "space-blimp.c", 263
+000070r 1               	.dbg	line, "space-blimp.c", 270
 000070r 1  A0 02        	ldy     #$02
 000072r 1  B1 rr        	lda     (sp),y
 000074r 1  AA           	tax
@@ -411,7 +411,7 @@ Current file: space-blimp.s
 000092r 1  E0 80        	cpx     #$80
 000094r 1  88           L000B:	dey
 000095r 1  91 rr        	sta     (sp),y
-000097r 1               	.dbg	line, "space-blimp.c", 264
+000097r 1               	.dbg	line, "space-blimp.c", 271
 000097r 1  20 rr rr     	jsr     decsp3
 00009Ar 1  A9 10        	lda     #$10
 00009Cr 1  C8           	iny
@@ -427,7 +427,7 @@ Current file: space-blimp.s
 0000AEr 1  B1 rr        	lda     (sp),y
 0000B0r 1  20 rr rr     	jsr     boolne
 0000B3r 1  20 rr rr     	jsr     _set_bit
-0000B6r 1               	.dbg	line, "space-blimp.c", 265
+0000B6r 1               	.dbg	line, "space-blimp.c", 272
 0000B6r 1  4C rr rr     	jmp     incsp4
 0000B9r 1               
 0000B9r 1               	.dbg	line
@@ -447,15 +447,15 @@ Current file: space-blimp.s
 0000B9r 1               
 0000B9r 1               .segment	"CODE"
 0000B9r 1               
-0000B9r 1               	.dbg	line, "space-blimp.c", 81
+0000B9r 1               	.dbg	line, "space-blimp.c", 85
 0000B9r 1  20 rr rr     	jsr     decsp1
 0000BCr 1  A9 00        	lda     #$00
 0000BEr 1  20 rr rr     	jsr     pusha
-0000C1r 1               	.dbg	line, "space-blimp.c", 83
+0000C1r 1               	.dbg	line, "space-blimp.c", 87
 0000C1r 1  20 rr rr     	jsr     _get_device_num
 0000C4r 1  A0 01        	ldy     #$01
 0000C6r 1  91 rr        	sta     (sp),y
-0000C8r 1               	.dbg	line, "space-blimp.c", 84
+0000C8r 1               	.dbg	line, "space-blimp.c", 88
 0000C8r 1  AD rr rr     	lda     _fn
 0000CBr 1  AE rr rr     	ldx     _fn+1
 0000CEr 1  20 rr rr     	jsr     pushax
@@ -464,10 +464,10 @@ Current file: space-blimp.s
 0000D5r 1  20 rr rr     	jsr     _load_sprites
 0000D8r 1  A0 00        	ldy     #$00
 0000DAr 1  91 rr        	sta     (sp),y
-0000DCr 1               	.dbg	line, "space-blimp.c", 85
+0000DCr 1               	.dbg	line, "space-blimp.c", 89
 0000DCr 1  B1 rr        	lda     (sp),y
 0000DEr 1  F0 1D        	beq     L0002
-0000E0r 1               	.dbg	line, "space-blimp.c", 86
+0000E0r 1               	.dbg	line, "space-blimp.c", 90
 0000E0r 1  A9 rr        	lda     #<(S0004)
 0000E2r 1  A2 rr        	ldx     #>(S0004)
 0000E4r 1  20 rr rr     	jsr     pushax
@@ -476,19 +476,19 @@ Current file: space-blimp.s
 0000EBr 1  20 rr rr     	jsr     pusha0
 0000EEr 1  A0 04        	ldy     #$04
 0000F0r 1  20 rr rr     	jsr     _printf
-0000F3r 1               	.dbg	line, "space-blimp.c", 87
+0000F3r 1               	.dbg	line, "space-blimp.c", 91
 0000F3r 1  A2 00        	ldx     #$00
 0000F5r 1  A1 rr        	lda     (sp,x)
 0000F7r 1  20 rr rr     	jsr     _exit
-0000FAr 1               	.dbg	line, "space-blimp.c", 89
+0000FAr 1               	.dbg	line, "space-blimp.c", 93
 0000FAr 1  4C rr rr     	jmp     L0003
-0000FDr 1               	.dbg	line, "space-blimp.c", 90
+0000FDr 1               	.dbg	line, "space-blimp.c", 94
 0000FDr 1  A9 rr        L0002:	lda     #<(S0005)
 0000FFr 1  A2 rr        	ldx     #>(S0005)
 000101r 1  20 rr rr     	jsr     pushax
 000104r 1  A0 02        	ldy     #$02
 000106r 1  20 rr rr     	jsr     _printf
-000109r 1               	.dbg	line, "space-blimp.c", 92
+000109r 1               	.dbg	line, "space-blimp.c", 96
 000109r 1  4C rr rr     L0003:	jmp     incsp2
 00010Cr 1               
 00010Cr 1               	.dbg	line
@@ -524,9 +524,9 @@ Current file: space-blimp.s
 00010Cr 1               
 00010Cr 1               .segment	"CODE"
 00010Cr 1               
-00010Cr 1               	.dbg	line, "space-blimp.c", 170
+00010Cr 1               	.dbg	line, "space-blimp.c", 177
 00010Cr 1  20 rr rr     	jsr     pushax
-00010Fr 1               	.dbg	line, "space-blimp.c", 171
+00010Fr 1               	.dbg	line, "space-blimp.c", 178
 00010Fr 1  A0 16        	ldy     #$16
 000111r 1  B1 rr        	lda     (sp),y
 000113r 1  20 rr rr     	jsr     pusha0
@@ -540,7 +540,7 @@ Current file: space-blimp.s
 000122r 1  AA           	tax
 000123r 1  98           	tya
 000124r 1  20 rr rr     	jsr     pushax
-000127r 1               	.dbg	line, "space-blimp.c", 172
+000127r 1               	.dbg	line, "space-blimp.c", 179
 000127r 1  A0 01        	ldy     #$01
 000129r 1  B1 rr        	lda     (sp),y
 00012Br 1  85 rr        	sta     ptr1+1
@@ -551,7 +551,7 @@ Current file: space-blimp.s
 000134r 1  B1 rr        	lda     (sp),y
 000136r 1  A0 00        	ldy     #$00
 000138r 1  91 rr        	sta     (ptr1),y
-00013Ar 1               	.dbg	line, "space-blimp.c", 173
+00013Ar 1               	.dbg	line, "space-blimp.c", 180
 00013Ar 1  C8           	iny
 00013Br 1  B1 rr        	lda     (sp),y
 00013Dr 1  85 rr        	sta     ptr1+1
@@ -562,7 +562,7 @@ Current file: space-blimp.s
 000146r 1  B1 rr        	lda     (sp),y
 000148r 1  A0 01        	ldy     #$01
 00014Ar 1  91 rr        	sta     (ptr1),y
-00014Cr 1               	.dbg	line, "space-blimp.c", 174
+00014Cr 1               	.dbg	line, "space-blimp.c", 181
 00014Cr 1  B1 rr        	lda     (sp),y
 00014Er 1  85 rr        	sta     ptr1+1
 000150r 1  88           	dey
@@ -578,7 +578,7 @@ Current file: space-blimp.s
 000161r 1  C8           	iny
 000162r 1  8A           	txa
 000163r 1  91 rr        	sta     (ptr1),y
-000165r 1               	.dbg	line, "space-blimp.c", 175
+000165r 1               	.dbg	line, "space-blimp.c", 182
 000165r 1  A0 01        	ldy     #$01
 000167r 1  B1 rr        	lda     (sp),y
 000169r 1  85 rr        	sta     ptr1+1
@@ -589,7 +589,7 @@ Current file: space-blimp.s
 000172r 1  B1 rr        	lda     (sp),y
 000174r 1  A0 14        	ldy     #$14
 000176r 1  91 rr        	sta     (ptr1),y
-000178r 1               	.dbg	line, "space-blimp.c", 176
+000178r 1               	.dbg	line, "space-blimp.c", 183
 000178r 1  A0 01        	ldy     #$01
 00017Ar 1  B1 rr        	lda     (sp),y
 00017Cr 1  85 rr        	sta     ptr1+1
@@ -599,7 +599,7 @@ Current file: space-blimp.s
 000183r 1  98           	tya
 000184r 1  A0 15        	ldy     #$15
 000186r 1  91 rr        	sta     (ptr1),y
-000188r 1               	.dbg	line, "space-blimp.c", 177
+000188r 1               	.dbg	line, "space-blimp.c", 184
 000188r 1  A0 01        	ldy     #$01
 00018Ar 1  B1 rr        	lda     (sp),y
 00018Cr 1  85 rr        	sta     ptr1+1
@@ -616,7 +616,7 @@ Current file: space-blimp.s
 00019Fr 1  C8           	iny
 0001A0r 1  8A           	txa
 0001A1r 1  91 rr        	sta     (ptr1),y
-0001A3r 1               	.dbg	line, "space-blimp.c", 178
+0001A3r 1               	.dbg	line, "space-blimp.c", 185
 0001A3r 1  A0 01        	ldy     #$01
 0001A5r 1  B1 rr        	lda     (sp),y
 0001A7r 1  85 rr        	sta     ptr1+1
@@ -630,7 +630,7 @@ Current file: space-blimp.s
 0001B6r 1  C8           	iny
 0001B7r 1  A9 00        	lda     #$00
 0001B9r 1  91 rr        	sta     (ptr1),y
-0001BBr 1               	.dbg	line, "space-blimp.c", 179
+0001BBr 1               	.dbg	line, "space-blimp.c", 186
 0001BBr 1  A0 01        	ldy     #$01
 0001BDr 1  B1 rr        	lda     (sp),y
 0001BFr 1  85 rr        	sta     ptr1+1
@@ -641,7 +641,7 @@ Current file: space-blimp.s
 0001C8r 1  B1 rr        	lda     (sp),y
 0001CAr 1  A0 07        	ldy     #$07
 0001CCr 1  91 rr        	sta     (ptr1),y
-0001CEr 1               	.dbg	line, "space-blimp.c", 180
+0001CEr 1               	.dbg	line, "space-blimp.c", 187
 0001CEr 1  A0 01        	ldy     #$01
 0001D0r 1  B1 rr        	lda     (sp),y
 0001D2r 1  85 rr        	sta     ptr1+1
@@ -652,7 +652,7 @@ Current file: space-blimp.s
 0001DBr 1  B1 rr        	lda     (sp),y
 0001DDr 1  A0 08        	ldy     #$08
 0001DFr 1  91 rr        	sta     (ptr1),y
-0001E1r 1               	.dbg	line, "space-blimp.c", 181
+0001E1r 1               	.dbg	line, "space-blimp.c", 188
 0001E1r 1  A0 01        	ldy     #$01
 0001E3r 1  B1 rr        	lda     (sp),y
 0001E5r 1  85 rr        	sta     ptr1+1
@@ -663,7 +663,7 @@ Current file: space-blimp.s
 0001EEr 1  B1 rr        	lda     (sp),y
 0001F0r 1  A0 09        	ldy     #$09
 0001F2r 1  91 rr        	sta     (ptr1),y
-0001F4r 1               	.dbg	line, "space-blimp.c", 182
+0001F4r 1               	.dbg	line, "space-blimp.c", 189
 0001F4r 1  A0 01        	ldy     #$01
 0001F6r 1  B1 rr        	lda     (sp),y
 0001F8r 1  85 rr        	sta     ptr1+1
@@ -674,7 +674,7 @@ Current file: space-blimp.s
 000201r 1  B1 rr        	lda     (sp),y
 000203r 1  A0 0A        	ldy     #$0A
 000205r 1  91 rr        	sta     (ptr1),y
-000207r 1               	.dbg	line, "space-blimp.c", 183
+000207r 1               	.dbg	line, "space-blimp.c", 190
 000207r 1  A0 01        	ldy     #$01
 000209r 1  B1 rr        	lda     (sp),y
 00020Br 1  85 rr        	sta     ptr1+1
@@ -684,7 +684,7 @@ Current file: space-blimp.s
 000212r 1  A0 0B        	ldy     #$0B
 000214r 1  B1 rr        	lda     (sp),y
 000216r 1  91 rr        	sta     (ptr1),y
-000218r 1               	.dbg	line, "space-blimp.c", 184
+000218r 1               	.dbg	line, "space-blimp.c", 191
 000218r 1  A0 01        	ldy     #$01
 00021Ar 1  B1 rr        	lda     (sp),y
 00021Cr 1  85 rr        	sta     ptr1+1
@@ -695,7 +695,7 @@ Current file: space-blimp.s
 000225r 1  B1 rr        	lda     (sp),y
 000227r 1  A0 06        	ldy     #$06
 000229r 1  91 rr        	sta     (ptr1),y
-00022Br 1               	.dbg	line, "space-blimp.c", 185
+00022Br 1               	.dbg	line, "space-blimp.c", 192
 00022Br 1  A0 01        	ldy     #$01
 00022Dr 1  B1 rr        	lda     (sp),y
 00022Fr 1  85 rr        	sta     sreg+1
@@ -718,7 +718,7 @@ Current file: space-blimp.s
 00024Dr 1  C8           	iny
 00024Er 1  8A           	txa
 00024Fr 1  91 rr        	sta     (sreg),y
-000251r 1               	.dbg	line, "space-blimp.c", 186
+000251r 1               	.dbg	line, "space-blimp.c", 193
 000251r 1  A0 01        	ldy     #$01
 000253r 1  B1 rr        	lda     (sp),y
 000255r 1  85 rr        	sta     sreg+1
@@ -741,7 +741,7 @@ Current file: space-blimp.s
 000273r 1  C8           	iny
 000274r 1  8A           	txa
 000275r 1  91 rr        	sta     (sreg),y
-000277r 1               	.dbg	line, "space-blimp.c", 187
+000277r 1               	.dbg	line, "space-blimp.c", 194
 000277r 1  A0 01        	ldy     #$01
 000279r 1  B1 rr        	lda     (sp),y
 00027Br 1  85 rr        	sta     ptr1+1
@@ -758,7 +758,7 @@ Current file: space-blimp.s
 00028Er 1  C8           	iny
 00028Fr 1  8A           	txa
 000290r 1  91 rr        	sta     (ptr1),y
-000292r 1               	.dbg	line, "space-blimp.c", 188
+000292r 1               	.dbg	line, "space-blimp.c", 195
 000292r 1  A0 01        	ldy     #$01
 000294r 1  B1 rr        	lda     (sp),y
 000296r 1  85 rr        	sta     ptr1+1
@@ -775,12 +775,12 @@ Current file: space-blimp.s
 0002A9r 1  C8           	iny
 0002AAr 1  8A           	txa
 0002ABr 1  91 rr        	sta     (ptr1),y
-0002ADr 1               	.dbg	line, "space-blimp.c", 190
+0002ADr 1               	.dbg	line, "space-blimp.c", 197
 0002ADr 1  20 rr rr     	jsr     pushw0sp
 0002B0r 1  A0 18        	ldy     #$18
 0002B2r 1  B1 rr        	lda     (sp),y
 0002B4r 1  20 rr rr     	jsr     _set_sprite
-0002B7r 1               	.dbg	line, "space-blimp.c", 192
+0002B7r 1               	.dbg	line, "space-blimp.c", 199
 0002B7r 1  A0 01        	ldy     #$01
 0002B9r 1  B1 rr        	lda     (sp),y
 0002BBr 1  85 rr        	sta     ptr1+1
@@ -826,13 +826,13 @@ Current file: space-blimp.s
 000303r 1  A0 00        	ldy     #$00
 000305r 1  B1 rr        	lda     (ptr1),y
 000307r 1  91 rr        	sta     (ptr2),y
-000309r 1               	.dbg	line, "space-blimp.c", 194
+000309r 1               	.dbg	line, "space-blimp.c", 201
 000309r 1  C8           	iny
 00030Ar 1  B1 rr        	lda     (sp),y
 00030Cr 1  AA           	tax
 00030Dr 1  88           	dey
 00030Er 1  B1 rr        	lda     (sp),y
-000310r 1               	.dbg	line, "space-blimp.c", 195
+000310r 1               	.dbg	line, "space-blimp.c", 202
 000310r 1  A0 19        	ldy     #$19
 000312r 1  4C rr rr     	jmp     addysp
 000315r 1               
@@ -852,7 +852,7 @@ Current file: space-blimp.s
 000315r 1               
 000315r 1               .segment	"CODE"
 000315r 1               
-000315r 1               	.dbg	line, "space-blimp.c", 132
+000315r 1               	.dbg	line, "space-blimp.c", 139
 000315r 1  20 rr rr     	jsr     decsp2
 000318r 1  A0 00        	ldy     #$00
 00031Ar 1  98           	tya
@@ -870,7 +870,7 @@ Current file: space-blimp.s
 00032Dr 1  50 02        	bvc     L0006
 00032Fr 1  49 80        	eor     #$80
 000331r 1  10 36        L0006:	bpl     L0003
-000333r 1               	.dbg	line, "space-blimp.c", 133
+000333r 1               	.dbg	line, "space-blimp.c", 140
 000333r 1  20 rr rr     	jsr     pushw0sp
 000336r 1  A9 18        	lda     #$18
 000338r 1  20 rr rr     	jsr     tosmula0
@@ -883,7 +883,7 @@ Current file: space-blimp.s
 000345r 1  B1 rr        	lda     (ptr1),y
 000347r 1  C9 01        	cmp     #$01
 000349r 1  D0 14        	bne     L0004
-00034Br 1               	.dbg	line, "space-blimp.c", 134
+00034Br 1               	.dbg	line, "space-blimp.c", 141
 00034Br 1  20 rr rr     	jsr     pushw0sp
 00034Er 1  A9 18        	lda     #$18
 000350r 1  20 rr rr     	jsr     tosmula0
@@ -895,12 +895,12 @@ Current file: space-blimp.s
 00035Ar 1  AA           	tax
 00035Br 1  98           	tya
 00035Cr 1  20 rr rr     	jsr     _move_mob
-00035Fr 1               	.dbg	line, "space-blimp.c", 132
+00035Fr 1               	.dbg	line, "space-blimp.c", 139
 00035Fr 1  A2 00        L0004:	ldx     #$00
 000361r 1  A9 01        	lda     #$01
 000363r 1  20 rr rr     	jsr     addeq0sp
 000366r 1  4C rr rr     	jmp     L0002
-000369r 1               	.dbg	line, "space-blimp.c", 137
+000369r 1               	.dbg	line, "space-blimp.c", 144
 000369r 1  4C rr rr     L0003:	jmp     incsp2
 00036Cr 1               
 00036Cr 1               	.dbg	line
@@ -920,9 +920,9 @@ Current file: space-blimp.s
 00036Cr 1               
 00036Cr 1               .segment	"CODE"
 00036Cr 1               
-00036Cr 1               	.dbg	line, "space-blimp.c", 298
+00036Cr 1               	.dbg	line, "space-blimp.c", 305
 00036Cr 1  20 rr rr     	jsr     pusha
-00036Fr 1               	.dbg	line, "space-blimp.c", 299
+00036Fr 1               	.dbg	line, "space-blimp.c", 306
 00036Fr 1  A0 01        	ldy     #$01
 000371r 1  B1 rr        	lda     (sp),y
 000373r 1  C8           	iny
@@ -935,39 +935,39 @@ Current file: space-blimp.s
 000380r 1  A2 rr        	ldx     #>(S000F)
 000382r 1  20 rr rr     	jsr     pushax
 000385r 1  A2 01        	ldx     #$01
-000387r 1  A9 2B        	lda     #$2B
+000387r 1  A9 32        	lda     #$32
 000389r 1  20 rr rr     	jsr     __afailed
-00038Cr 1               	.dbg	line, "space-blimp.c", 301
+00038Cr 1               	.dbg	line, "space-blimp.c", 308
 00038Cr 1  A0 04        L0007:	ldy     #$04
 00038Er 1  20 rr rr     	jsr     pushwysp
 000391r 1  A0 02        	ldy     #$02
 000393r 1  B1 rr        	lda     (sp),y
 000395r 1  20 rr rr     	jsr     _bouncy_border_collision_handler
-000398r 1               	.dbg	line, "space-blimp.c", 302
+000398r 1               	.dbg	line, "space-blimp.c", 309
 000398r 1  A0 00        	ldy     #$00
 00039Ar 1  B1 rr        	lda     (sp),y
 00039Cr 1  C9 03        	cmp     #$03
 00039Er 1  D0 0E        	bne     L000D
-0003A0r 1               	.dbg	line, "space-blimp.c", 303
+0003A0r 1               	.dbg	line, "space-blimp.c", 310
 0003A0r 1  A0 02        	ldy     #$02
 0003A2r 1  B1 rr        	lda     (sp),y
 0003A4r 1  AA           	tax
 0003A5r 1  88           	dey
 0003A6r 1  B1 rr        	lda     (sp),y
 0003A8r 1  20 rr rr     	jsr     _prev_sprite_ptr
-0003ABr 1               	.dbg	line, "space-blimp.c", 305
+0003ABr 1               	.dbg	line, "space-blimp.c", 312
 0003ABr 1  4C rr rr     	jmp     L000A
 0003AEr 1  B1 rr        L000D:	lda     (sp),y
 0003B0r 1  C9 01        	cmp     #$01
 0003B2r 1  D0 0B        	bne     L000A
-0003B4r 1               	.dbg	line, "space-blimp.c", 306
+0003B4r 1               	.dbg	line, "space-blimp.c", 313
 0003B4r 1  A0 02        	ldy     #$02
 0003B6r 1  B1 rr        	lda     (sp),y
 0003B8r 1  AA           	tax
 0003B9r 1  88           	dey
 0003BAr 1  B1 rr        	lda     (sp),y
 0003BCr 1  20 rr rr     	jsr     _next_sprite_ptr
-0003BFr 1               	.dbg	line, "space-blimp.c", 308
+0003BFr 1               	.dbg	line, "space-blimp.c", 315
 0003BFr 1  4C rr rr     L000A:	jmp     incsp3
 0003C2r 1               
 0003C2r 1               	.dbg	line
@@ -987,9 +987,9 @@ Current file: space-blimp.s
 0003C2r 1               
 0003C2r 1               .segment	"CODE"
 0003C2r 1               
-0003C2r 1               	.dbg	line, "space-blimp.c", 271
+0003C2r 1               	.dbg	line, "space-blimp.c", 278
 0003C2r 1  20 rr rr     	jsr     pusha
-0003C5r 1               	.dbg	line, "space-blimp.c", 272
+0003C5r 1               	.dbg	line, "space-blimp.c", 279
 0003C5r 1  A0 01        	ldy     #$01
 0003C7r 1  B1 rr        	lda     (sp),y
 0003C9r 1  C8           	iny
@@ -999,12 +999,12 @@ Current file: space-blimp.s
 0003D0r 1  A2 rr        	ldx     #>(S000E)
 0003D2r 1  20 rr rr     	jsr     pushax
 0003D5r 1  A2 01        	ldx     #$01
-0003D7r 1  A9 10        	lda     #$10
+0003D7r 1  A9 17        	lda     #$17
 0003D9r 1  20 rr rr     	jsr     __afailed
-0003DCr 1               	.dbg	line, "space-blimp.c", 274
+0003DCr 1               	.dbg	line, "space-blimp.c", 281
 0003DCr 1  A0 00        L0004:	ldy     #$00
 0003DEr 1  B1 rr        	lda     (sp),y
-0003E0r 1               	.dbg	line, "space-blimp.c", 295
+0003E0r 1               	.dbg	line, "space-blimp.c", 302
 0003E0r 1  C9 01        	cmp     #$01
 0003E2r 1  F0 34        	beq     L0008
 0003E4r 1  C9 02        	cmp     #$02
@@ -1014,7 +1014,7 @@ Current file: space-blimp.s
 0003ECr 1  C9 04        	cmp     #$04
 0003EEr 1  F0 5C        	beq     L000A
 0003F0r 1  4C rr rr     	jmp     L0006
-0003F3r 1               	.dbg	line, "space-blimp.c", 276
+0003F3r 1               	.dbg	line, "space-blimp.c", 283
 0003F3r 1  A0 02        L0007:	ldy     #$02
 0003F5r 1  B1 rr        	lda     (sp),y
 0003F7r 1  85 rr        	sta     ptr1+1
@@ -1027,7 +1027,7 @@ Current file: space-blimp.s
 000403r 1  C8           	iny
 000404r 1  A9 00        	lda     #$00
 000406r 1  91 rr        	sta     (ptr1),y
-000408r 1               	.dbg	line, "space-blimp.c", 277
+000408r 1               	.dbg	line, "space-blimp.c", 284
 000408r 1  88           	dey
 000409r 1  B1 rr        	lda     (sp),y
 00040Br 1  AA           	tax
@@ -1036,9 +1036,9 @@ Current file: space-blimp.s
 00040Fr 1  85 rr        	sta     sreg
 000411r 1  86 rr        	stx     sreg+1
 000413r 1  A0 0A        	ldy     #$0A
-000415r 1               	.dbg	line, "space-blimp.c", 278
+000415r 1               	.dbg	line, "space-blimp.c", 285
 000415r 1  4C rr rr     	jmp     L000F
-000418r 1               	.dbg	line, "space-blimp.c", 281
+000418r 1               	.dbg	line, "space-blimp.c", 288
 000418r 1  A0 02        L0008:	ldy     #$02
 00041Ar 1  B1 rr        	lda     (sp),y
 00041Cr 1  85 rr        	sta     ptr1+1
@@ -1051,7 +1051,7 @@ Current file: space-blimp.s
 000428r 1  C8           	iny
 000429r 1  A9 01        	lda     #$01
 00042Br 1  91 rr        	sta     (ptr1),y
-00042Dr 1               	.dbg	line, "space-blimp.c", 282
+00042Dr 1               	.dbg	line, "space-blimp.c", 289
 00042Dr 1  88           	dey
 00042Er 1  B1 rr        	lda     (sp),y
 000430r 1  AA           	tax
@@ -1060,9 +1060,9 @@ Current file: space-blimp.s
 000434r 1  85 rr        	sta     sreg
 000436r 1  86 rr        	stx     sreg+1
 000438r 1  A0 0A        	ldy     #$0A
-00043Ar 1               	.dbg	line, "space-blimp.c", 283
+00043Ar 1               	.dbg	line, "space-blimp.c", 290
 00043Ar 1  4C rr rr     	jmp     L000F
-00043Dr 1               	.dbg	line, "space-blimp.c", 286
+00043Dr 1               	.dbg	line, "space-blimp.c", 293
 00043Dr 1  A8           L0009:	tay
 00043Er 1  B1 rr        	lda     (sp),y
 000440r 1  85 rr        	sta     ptr1+1
@@ -1070,9 +1070,9 @@ Current file: space-blimp.s
 000443r 1  B1 rr        	lda     (sp),y
 000445r 1  85 rr        	sta     ptr1
 000447r 1  A9 32        	lda     #$32
-000449r 1               	.dbg	line, "space-blimp.c", 288
+000449r 1               	.dbg	line, "space-blimp.c", 295
 000449r 1  4C rr rr     	jmp     L0019
-00044Cr 1               	.dbg	line, "space-blimp.c", 291
+00044Cr 1               	.dbg	line, "space-blimp.c", 298
 00044Cr 1  A0 02        L000A:	ldy     #$02
 00044Er 1  B1 rr        	lda     (sp),y
 000450r 1  85 rr        	sta     ptr1+1
@@ -1085,7 +1085,7 @@ Current file: space-blimp.s
 00045Dr 1  C8           	iny
 00045Er 1  A9 00        	lda     #$00
 000460r 1  91 rr        	sta     (ptr1),y
-000462r 1               	.dbg	line, "space-blimp.c", 292
+000462r 1               	.dbg	line, "space-blimp.c", 299
 000462r 1  A0 02        	ldy     #$02
 000464r 1  B1 rr        	lda     (sp),y
 000466r 1  AA           	tax
@@ -1099,7 +1099,7 @@ Current file: space-blimp.s
 000475r 1  18           	clc
 000476r 1  69 01        	adc     #$01
 000478r 1  91 rr        	sta     (sreg),y
-00047Ar 1               	.dbg	line, "space-blimp.c", 296
+00047Ar 1               	.dbg	line, "space-blimp.c", 303
 00047Ar 1  4C rr rr     L0006:	jmp     incsp3
 00047Dr 1               
 00047Dr 1               	.dbg	line
@@ -1119,9 +1119,9 @@ Current file: space-blimp.s
 00047Dr 1               
 00047Dr 1               .segment	"CODE"
 00047Dr 1               
-00047Dr 1               	.dbg	line, "space-blimp.c", 310
+00047Dr 1               	.dbg	line, "space-blimp.c", 317
 00047Dr 1  20 rr rr     	jsr     pusha
-000480r 1               	.dbg	line, "space-blimp.c", 312
+000480r 1               	.dbg	line, "space-blimp.c", 319
 000480r 1  A0 01        	ldy     #$01
 000482r 1  B1 rr        	lda     (sp),y
 000484r 1  C8           	iny
@@ -1131,9 +1131,9 @@ Current file: space-blimp.s
 00048Br 1  A2 rr        	ldx     #>(S0010)
 00048Dr 1  20 rr rr     	jsr     pushax
 000490r 1  A2 01        	ldx     #$01
-000492r 1  A9 38        	lda     #$38
+000492r 1  A9 3F        	lda     #$3F
 000494r 1  20 rr rr     	jsr     __afailed
-000497r 1               	.dbg	line, "space-blimp.c", 314
+000497r 1               	.dbg	line, "space-blimp.c", 321
 000497r 1  A2 00        L0004:	ldx     #$00
 000499r 1  A1 rr        	lda     (sp,x)
 00049Br 1  C9 02        	cmp     #$02
@@ -1142,12 +1142,12 @@ Current file: space-blimp.s
 0004A1r 1  A2 rr        	ldx     #>(S0011)
 0004A3r 1  20 rr rr     	jsr     pushax
 0004A6r 1  A2 01        	ldx     #$01
-0004A8r 1  A9 3A        	lda     #$3A
+0004A8r 1  A9 41        	lda     #$41
 0004AAr 1  20 rr rr     	jsr     __afailed
-0004ADr 1               	.dbg	line, "space-blimp.c", 316
+0004ADr 1               	.dbg	line, "space-blimp.c", 323
 0004ADr 1  A2 00        	ldx     #$00
 0004AFr 1  A1 rr        L000E:	lda     (sp,x)
-0004B1r 1               	.dbg	line, "space-blimp.c", 336
+0004B1r 1               	.dbg	line, "space-blimp.c", 343
 0004B1r 1  C9 01        	cmp     #$01
 0004B3r 1  F0 17        	beq     L000F
 0004B5r 1  C9 03        	cmp     #$03
@@ -1155,22 +1155,22 @@ Current file: space-blimp.s
 0004B9r 1  C9 04        	cmp     #$04
 0004BBr 1  F0 1A        	beq     L000B
 0004BDr 1  4C rr rr     	jmp     L0008
-0004C0r 1               	.dbg	line, "space-blimp.c", 319
+0004C0r 1               	.dbg	line, "space-blimp.c", 326
 0004C0r 1  E8           L0009:	inx
 0004C1r 1  A9 3F        	lda     #$3F
 0004C3r 1  8D rr rr     	sta     _mobs+26
 0004C6r 1  8E rr rr     	stx     _mobs+26+1
-0004C9r 1               	.dbg	line, "space-blimp.c", 320
+0004C9r 1               	.dbg	line, "space-blimp.c", 327
 0004C9r 1  4C rr rr     	jmp     L0008
-0004CCr 1               	.dbg	line, "space-blimp.c", 325
+0004CCr 1               	.dbg	line, "space-blimp.c", 332
 0004CCr 1  A9 12        L000F:	lda     #$12
 0004CEr 1  8D rr rr     	sta     _mobs+26
 0004D1r 1  8E rr rr     	stx     _mobs+26+1
-0004D4r 1               	.dbg	line, "space-blimp.c", 326
+0004D4r 1               	.dbg	line, "space-blimp.c", 333
 0004D4r 1  4C rr rr     	jmp     L0008
-0004D7r 1               	.dbg	line, "space-blimp.c", 330
+0004D7r 1               	.dbg	line, "space-blimp.c", 337
 0004D7r 1  20 rr rr     L000B:	jsr     _reset_bomb
-0004DAr 1               	.dbg	line, "space-blimp.c", 337
+0004DAr 1               	.dbg	line, "space-blimp.c", 344
 0004DAr 1  4C rr rr     L0008:	jmp     incsp3
 0004DDr 1               
 0004DDr 1               	.dbg	line
@@ -1190,12 +1190,12 @@ Current file: space-blimp.s
 0004DDr 1               
 0004DDr 1               .segment	"CODE"
 0004DDr 1               
-0004DDr 1               	.dbg	line, "space-blimp.c", 355
+0004DDr 1               	.dbg	line, "space-blimp.c", 362
 0004DDr 1  20 rr rr     	jsr     pushax
-0004E0r 1               	.dbg	line, "space-blimp.c", 356
+0004E0r 1               	.dbg	line, "space-blimp.c", 363
 0004E0r 1  A9 00        	lda     #$00
 0004E2r 1  20 rr rr     	jsr     pusha
-0004E5r 1               	.dbg	line, "space-blimp.c", 358
+0004E5r 1               	.dbg	line, "space-blimp.c", 365
 0004E5r 1  A0 01        	ldy     #$01
 0004E7r 1  B1 rr        	lda     (sp),y
 0004E9r 1  C8           	iny
@@ -1205,9 +1205,9 @@ Current file: space-blimp.s
 0004F0r 1  A2 rr        	ldx     #>(S0012)
 0004F2r 1  20 rr rr     	jsr     pushax
 0004F5r 1  A2 01        	ldx     #$01
-0004F7r 1  A9 66        	lda     #$66
+0004F7r 1  A9 6D        	lda     #$6D
 0004F9r 1  20 rr rr     	jsr     __afailed
-0004FCr 1               	.dbg	line, "space-blimp.c", 366
+0004FCr 1               	.dbg	line, "space-blimp.c", 373
 0004FCr 1  A0 02        	ldy     #$02
 0004FEr 1  B1 rr        L0017:	lda     (sp),y
 000500r 1  AA           	tax
@@ -1225,7 +1225,7 @@ Current file: space-blimp.s
 000516r 1  68           	pla
 000517r 1  F0 03 4C rr  	jne     L0005
 00051Br 1  rr           
-00051Cr 1               	.dbg	line, "space-blimp.c", 367
+00051Cr 1               	.dbg	line, "space-blimp.c", 374
 00051Cr 1  A0 02        	ldy     #$02
 00051Er 1  B1 rr        	lda     (sp),y
 000520r 1  AA           	tax
@@ -1250,7 +1250,7 @@ Current file: space-blimp.s
 000543r 1  20 rr rr     	jsr     tosaddax
 000546r 1  A0 02        	ldy     #$02
 000548r 1  20 rr rr     	jsr     staxspidx
-00054Br 1               	.dbg	line, "space-blimp.c", 368
+00054Br 1               	.dbg	line, "space-blimp.c", 375
 00054Br 1  B1 rr        	lda     (sp),y
 00054Dr 1  85 rr        	sta     ptr1+1
 00054Fr 1  88           	dey
@@ -1267,9 +1267,9 @@ Current file: space-blimp.s
 000561r 1  50 02        	bvc     L0007
 000563r 1  49 80        	eor     #$80
 000565r 1  10 05        L0007:	bpl     L0018
-000567r 1               	.dbg	line, "space-blimp.c", 369
+000567r 1               	.dbg	line, "space-blimp.c", 376
 000567r 1  A9 03        	lda     #$03
-000569r 1               	.dbg	line, "space-blimp.c", 371
+000569r 1               	.dbg	line, "space-blimp.c", 378
 000569r 1  4C rr rr     	jmp     L001A
 00056Cr 1  B1 rr        L0018:	lda     (sp),y
 00056Er 1  85 rr        	sta     ptr1+1
@@ -1287,11 +1287,11 @@ Current file: space-blimp.s
 000582r 1  70 02        	bvs     L000A
 000584r 1  49 80        	eor     #$80
 000586r 1  10 06        L000A:	bpl     L0019
-000588r 1               	.dbg	line, "space-blimp.c", 372
+000588r 1               	.dbg	line, "space-blimp.c", 379
 000588r 1  A9 01        	lda     #$01
 00058Ar 1  A0 00        L001A:	ldy     #$00
 00058Cr 1  91 rr        	sta     (sp),y
-00058Er 1               	.dbg	line, "space-blimp.c", 374
+00058Er 1               	.dbg	line, "space-blimp.c", 381
 00058Er 1  A0 04        L0019:	ldy     #$04
 000590r 1  20 rr rr     	jsr     pushwysp
 000593r 1  A0 04        	ldy     #$04
@@ -1304,7 +1304,7 @@ Current file: space-blimp.s
 0005A0r 1  B1 rr        	lda     (ptr1),y
 0005A2r 1  88           	dey
 0005A3r 1  20 rr rr     	jsr     staspidx
-0005A6r 1               	.dbg	line, "space-blimp.c", 376
+0005A6r 1               	.dbg	line, "space-blimp.c", 383
 0005A6r 1  A0 02        L0005:	ldy     #$02
 0005A8r 1  B1 rr        	lda     (sp),y
 0005AAr 1  AA           	tax
@@ -1322,7 +1322,7 @@ Current file: space-blimp.s
 0005C0r 1  68           	pla
 0005C1r 1  F0 03 4C rr  	jne     L000B
 0005C5r 1  rr           
-0005C6r 1               	.dbg	line, "space-blimp.c", 377
+0005C6r 1               	.dbg	line, "space-blimp.c", 384
 0005C6r 1  A0 02        	ldy     #$02
 0005C8r 1  B1 rr        	lda     (sp),y
 0005CAr 1  AA           	tax
@@ -1347,7 +1347,7 @@ Current file: space-blimp.s
 0005EDr 1  20 rr rr     	jsr     tosaddax
 0005F0r 1  A0 04        	ldy     #$04
 0005F2r 1  20 rr rr     	jsr     staxspidx
-0005F5r 1               	.dbg	line, "space-blimp.c", 378
+0005F5r 1               	.dbg	line, "space-blimp.c", 385
 0005F5r 1  A0 02        	ldy     #$02
 0005F7r 1  B1 rr        	lda     (sp),y
 0005F9r 1  85 rr        	sta     ptr1+1
@@ -1365,9 +1365,9 @@ Current file: space-blimp.s
 00060Dr 1  50 02        	bvc     L000D
 00060Fr 1  49 80        	eor     #$80
 000611r 1  10 05        L000D:	bpl     L000C
-000613r 1               	.dbg	line, "space-blimp.c", 379
+000613r 1               	.dbg	line, "space-blimp.c", 386
 000613r 1  A9 02        	lda     #$02
-000615r 1               	.dbg	line, "space-blimp.c", 381
+000615r 1               	.dbg	line, "space-blimp.c", 388
 000615r 1  4C rr rr     	jmp     L001B
 000618r 1  A0 02        L000C:	ldy     #$02
 00061Ar 1  B1 rr        	lda     (sp),y
@@ -1386,11 +1386,11 @@ Current file: space-blimp.s
 000630r 1  70 02        	bvs     L0010
 000632r 1  49 80        	eor     #$80
 000634r 1  10 05        L0010:	bpl     L000F
-000636r 1               	.dbg	line, "space-blimp.c", 382
+000636r 1               	.dbg	line, "space-blimp.c", 389
 000636r 1  98           	tya
 000637r 1  A0 00        L001B:	ldy     #$00
 000639r 1  91 rr        	sta     (sp),y
-00063Br 1               	.dbg	line, "space-blimp.c", 384
+00063Br 1               	.dbg	line, "space-blimp.c", 391
 00063Br 1  A0 04        L000F:	ldy     #$04
 00063Dr 1  20 rr rr     	jsr     pushwysp
 000640r 1  A0 04        	ldy     #$04
@@ -1403,7 +1403,7 @@ Current file: space-blimp.s
 00064Dr 1  B1 rr        	lda     (ptr1),y
 00064Fr 1  88           	dey
 000650r 1  20 rr rr     	jsr     staspidx
-000653r 1               	.dbg	line, "space-blimp.c", 388
+000653r 1               	.dbg	line, "space-blimp.c", 395
 000653r 1  A0 02        L000B:	ldy     #$02
 000655r 1  B1 rr        	lda     (sp),y
 000657r 1  85 rr        	sta     ptr1+1
@@ -1423,13 +1423,13 @@ Current file: space-blimp.s
 000670r 1  A2 rr        	ldx     #>(S0013)
 000672r 1  20 rr rr     	jsr     pushax
 000675r 1  A2 01        	ldx     #$01
-000677r 1  A9 84        	lda     #$84
+000677r 1  A9 8B        	lda     #$8B
 000679r 1  20 rr rr     	jsr     __afailed
-00067Cr 1               	.dbg	line, "space-blimp.c", 389
+00067Cr 1               	.dbg	line, "space-blimp.c", 396
 00067Cr 1  A0 00        L0013:	ldy     #$00
 00067Er 1  B1 rr        	lda     (sp),y
 000680r 1  F0 36        	beq     L0014
-000682r 1               	.dbg	line, "space-blimp.c", 391
+000682r 1               	.dbg	line, "space-blimp.c", 398
 000682r 1  A0 02        	ldy     #$02
 000684r 1  B1 rr        	lda     (sp),y
 000686r 1  85 rr        	sta     ptr1+1
@@ -1457,7 +1457,7 @@ Current file: space-blimp.s
 0006B1r 1  68           	pla
 0006B2r 1  20 rr rr     	jsr     jmpvec
 0006B5r 1  20 rr rr     	jsr     incsp2
-0006B8r 1               	.dbg	line, "space-blimp.c", 393
+0006B8r 1               	.dbg	line, "space-blimp.c", 400
 0006B8r 1  4C rr rr     L0014:	jmp     incsp3
 0006BBr 1               
 0006BBr 1               	.dbg	line
@@ -1479,9 +1479,9 @@ Current file: space-blimp.s
 0006BBr 1               
 0006BBr 1               .segment	"CODE"
 0006BBr 1               
-0006BBr 1               	.dbg	line, "space-blimp.c", 119
+0006BBr 1               	.dbg	line, "space-blimp.c", 126
 0006BBr 1  20 rr rr     	jsr     pusha
-0006BEr 1               	.dbg	line, "space-blimp.c", 122
+0006BEr 1               	.dbg	line, "space-blimp.c", 129
 0006BEr 1  20 rr rr     	jsr     decsp2
 0006C1r 1  A0 04        	ldy     #$04
 0006C3r 1  B1 rr        	lda     (sp),y
@@ -1491,7 +1491,7 @@ Current file: space-blimp.s
 0006C9r 1  20 rr rr     	jsr     _strlen
 0006CCr 1  A0 01        	ldy     #$01
 0006CEr 1  91 rr        	sta     (sp),y
-0006D0r 1               	.dbg	line, "space-blimp.c", 123
+0006D0r 1               	.dbg	line, "space-blimp.c", 130
 0006D0r 1  20 rr rr     	jsr     decsp4
 0006D3r 1  A0 08        	ldy     #$08
 0006D5r 1  B1 rr        	lda     (sp),y
@@ -1516,10 +1516,10 @@ Current file: space-blimp.s
 0006F6r 1  20 rr rr     	jsr     _loadbin
 0006F9r 1  A0 00        	ldy     #$00
 0006FBr 1  91 rr        	sta     (sp),y
-0006FDr 1               	.dbg	line, "space-blimp.c", 126
+0006FDr 1               	.dbg	line, "space-blimp.c", 133
 0006FDr 1  A2 00        	ldx     #$00
 0006FFr 1  B1 rr        	lda     (sp),y
-000701r 1               	.dbg	line, "space-blimp.c", 127
+000701r 1               	.dbg	line, "space-blimp.c", 134
 000701r 1  4C rr rr     	jmp     incsp5
 000704r 1               
 000704r 1               	.dbg	line
@@ -1537,7 +1537,7 @@ Current file: space-blimp.s
 000704r 1               
 000704r 1               .segment	"CODE"
 000704r 1               
-000704r 1               	.dbg	line, "space-blimp.c", 154
+000704r 1               	.dbg	line, "space-blimp.c", 161
 000704r 1  A0 15        	ldy     #$15
 000706r 1  20 rr rr     	jsr     subysp
 000709r 1  A9 00        	lda     #$00
@@ -1561,7 +1561,7 @@ Current file: space-blimp.s
 000729r 1  AD rr rr     	lda     _blimp_ptr_len
 00072Cr 1  A0 0E        	ldy     #$0E
 00072Er 1  91 rr        	sta     (sp),y
-000730r 1               	.dbg	line, "space-blimp.c", 155
+000730r 1               	.dbg	line, "space-blimp.c", 162
 000730r 1  A9 12        	lda     #$12
 000732r 1  A0 0C        	ldy     #$0C
 000734r 1  91 rr        	sta     (sp),y
@@ -1585,7 +1585,7 @@ Current file: space-blimp.s
 000753r 1  A9 0B        	lda     #$0B
 000755r 1  88           	dey
 000756r 1  91 rr        	sta     (sp),y
-000758r 1               	.dbg	line, "space-blimp.c", 156
+000758r 1               	.dbg	line, "space-blimp.c", 163
 000758r 1  A9 rr        	lda     #<(_x_counter)
 00075Ar 1  A0 04        	ldy     #$04
 00075Cr 1  91 rr        	sta     (sp),y
@@ -1598,7 +1598,7 @@ Current file: space-blimp.s
 000769r 1  C8           	iny
 00076Ar 1  A9 rr        	lda     #>(_y_counter)
 00076Cr 1  91 rr        	sta     (sp),y
-00076Er 1               	.dbg	line, "space-blimp.c", 157
+00076Er 1               	.dbg	line, "space-blimp.c", 164
 00076Er 1  A9 rr        	lda     #<(_sprite_switching_bouncy_border_collision_handler)
 000770r 1  A0 00        	ldy     #$00
 000772r 1  91 rr        	sta     (sp),y
@@ -1608,7 +1608,7 @@ Current file: space-blimp.s
 000779r 1  A9 rr        	lda     #<(_velocity_movement_handler)
 00077Br 1  A2 rr        	ldx     #>(_velocity_movement_handler)
 00077Dr 1  20 rr rr     	jsr     _init_MOB
-000780r 1               	.dbg	line, "space-blimp.c", 159
+000780r 1               	.dbg	line, "space-blimp.c", 166
 000780r 1  A0 15        	ldy     #$15
 000782r 1  20 rr rr     	jsr     subysp
 000785r 1  A9 01        	lda     #$01
@@ -1629,7 +1629,7 @@ Current file: space-blimp.s
 00079Fr 1  AD rr rr     	lda     _bomb_ptr_len
 0007A2r 1  A0 0E        	ldy     #$0E
 0007A4r 1  91 rr        	sta     (sp),y
-0007A6r 1               	.dbg	line, "space-blimp.c", 160
+0007A6r 1               	.dbg	line, "space-blimp.c", 167
 0007A6r 1  A9 12        	lda     #$12
 0007A8r 1  A0 0C        	ldy     #$0C
 0007AAr 1  91 rr        	sta     (sp),y
@@ -1653,7 +1653,7 @@ Current file: space-blimp.s
 0007C9r 1  A9 0B        	lda     #$0B
 0007CBr 1  88           	dey
 0007CCr 1  91 rr        	sta     (sp),y
-0007CEr 1               	.dbg	line, "space-blimp.c", 161
+0007CEr 1               	.dbg	line, "space-blimp.c", 168
 0007CEr 1  A9 rr        	lda     #<(_x_counter)
 0007D0r 1  A0 04        	ldy     #$04
 0007D2r 1  91 rr        	sta     (sp),y
@@ -1666,7 +1666,7 @@ Current file: space-blimp.s
 0007DFr 1  C8           	iny
 0007E0r 1  A9 rr        	lda     #>(_y_counter)
 0007E2r 1  91 rr        	sta     (sp),y
-0007E4r 1               	.dbg	line, "space-blimp.c", 162
+0007E4r 1               	.dbg	line, "space-blimp.c", 169
 0007E4r 1  A9 rr        	lda     #<(_sprite_switching_bouncy_border_collision_handler)
 0007E6r 1  A0 00        	ldy     #$00
 0007E8r 1  91 rr        	sta     (sp),y
@@ -1693,9 +1693,9 @@ Current file: space-blimp.s
 0007F6r 1               
 0007F6r 1               .segment	"CODE"
 0007F6r 1               
-0007F6r 1               	.dbg	line, "space-blimp.c", 139
+0007F6r 1               	.dbg	line, "space-blimp.c", 146
 0007F6r 1  20 rr rr     	jsr     pushax
-0007F9r 1               	.dbg	line, "space-blimp.c", 140
+0007F9r 1               	.dbg	line, "space-blimp.c", 147
 0007F9r 1  A0 01        	ldy     #$01
 0007FBr 1  B1 rr        	lda     (sp),y
 0007FDr 1  85 rr        	sta     ptr1+1
@@ -1723,7 +1723,7 @@ Current file: space-blimp.s
 000825r 1  68           	pla
 000826r 1  20 rr rr     	jsr     jmpvec
 000829r 1  20 rr rr     	jsr     incsp2
-00082Cr 1               	.dbg	line, "space-blimp.c", 141
+00082Cr 1               	.dbg	line, "space-blimp.c", 148
 00082Cr 1  4C rr rr     	jmp     incsp2
 00082Fr 1               
 00082Fr 1               	.dbg	line
@@ -1742,14 +1742,14 @@ Current file: space-blimp.s
 00082Fr 1               
 00082Fr 1               .segment	"CODE"
 00082Fr 1               
-00082Fr 1               	.dbg	line, "space-blimp.c", 215
+00082Fr 1               	.dbg	line, "space-blimp.c", 222
 00082Fr 1  20 rr rr     	jsr     decsp1
 000832r 1  A9 00        	lda     #$00
 000834r 1  A8           	tay
 000835r 1  91 rr        L0006:	sta     (sp),y
 000837r 1  C9 02        	cmp     #$02
 000839r 1  B0 2E        	bcs     L0003
-00083Br 1               	.dbg	line, "space-blimp.c", 216
+00083Br 1               	.dbg	line, "space-blimp.c", 223
 00083Br 1  B1 rr        	lda     (sp),y
 00083Dr 1  20 rr rr     	jsr     pusha0
 000840r 1  A9 18        	lda     #$18
@@ -1762,22 +1762,22 @@ Current file: space-blimp.s
 00084Cr 1  AA           	tax
 00084Dr 1  98           	tya
 00084Er 1  20 rr rr     	jsr     pushax
-000851r 1               	.dbg	line, "space-blimp.c", 217
+000851r 1               	.dbg	line, "space-blimp.c", 224
 000851r 1  A0 01        	ldy     #$01
 000853r 1  B1 rr        	lda     (sp),y
 000855r 1  AA           	tax
 000856r 1  88           	dey
 000857r 1  B1 rr        	lda     (sp),y
 000859r 1  20 rr rr     	jsr     _draw_mob
-00085Cr 1               	.dbg	line, "space-blimp.c", 218
+00085Cr 1               	.dbg	line, "space-blimp.c", 225
 00085Cr 1  20 rr rr     	jsr     incsp2
-00085Fr 1               	.dbg	line, "space-blimp.c", 215
+00085Fr 1               	.dbg	line, "space-blimp.c", 222
 00085Fr 1  A0 00        	ldy     #$00
 000861r 1  18           	clc
 000862r 1  A9 01        	lda     #$01
 000864r 1  71 rr        	adc     (sp),y
 000866r 1  4C rr rr     	jmp     L0006
-000869r 1               	.dbg	line, "space-blimp.c", 219
+000869r 1               	.dbg	line, "space-blimp.c", 226
 000869r 1  4C rr rr     L0003:	jmp     incsp1
 00086Cr 1               
 00086Cr 1               	.dbg	line
@@ -1797,9 +1797,9 @@ Current file: space-blimp.s
 00086Cr 1               
 00086Cr 1               .segment	"CODE"
 00086Cr 1               
-00086Cr 1               	.dbg	line, "space-blimp.c", 244
+00086Cr 1               	.dbg	line, "space-blimp.c", 251
 00086Cr 1  20 rr rr     	jsr     pushax
-00086Fr 1               	.dbg	line, "space-blimp.c", 247
+00086Fr 1               	.dbg	line, "space-blimp.c", 254
 00086Fr 1  20 rr rr     	jsr     decsp1
 000872r 1  A9 rr        	lda     #<(S0007)
 000874r 1  A2 rr        	ldx     #>(S0007)
@@ -1817,7 +1817,7 @@ Current file: space-blimp.s
 00088Dr 1  20 rr rr     	jsr     pusha0
 000890r 1  A0 06        	ldy     #$06
 000892r 1  20 rr rr     	jsr     _printf
-000895r 1               	.dbg	line, "space-blimp.c", 248
+000895r 1               	.dbg	line, "space-blimp.c", 255
 000895r 1  A9 rr        	lda     #<(S0008)
 000897r 1  A2 rr        	ldx     #>(S0008)
 000899r 1  20 rr rr     	jsr     pushax
@@ -1863,7 +1863,7 @@ Current file: space-blimp.s
 0008E4r 1  20 rr rr     	jsr     pusha0
 0008E7r 1  A0 06        	ldy     #$06
 0008E9r 1  20 rr rr     	jsr     _printf
-0008ECr 1               	.dbg	line, "space-blimp.c", 249
+0008ECr 1               	.dbg	line, "space-blimp.c", 256
 0008ECr 1  A9 rr        	lda     #<(S0009)
 0008EEr 1  A2 rr        	ldx     #>(S0009)
 0008F0r 1  20 rr rr     	jsr     pushax
@@ -1891,7 +1891,7 @@ Current file: space-blimp.s
 000918r 1  20 rr rr     	jsr     pushax
 00091Br 1  A0 06        	ldy     #$06
 00091Dr 1  20 rr rr     	jsr     _printf
-000920r 1               	.dbg	line, "space-blimp.c", 250
+000920r 1               	.dbg	line, "space-blimp.c", 257
 000920r 1  A9 rr        	lda     #<(S000A)
 000922r 1  A2 rr        	ldx     #>(S000A)
 000924r 1  20 rr rr     	jsr     pushax
@@ -1906,7 +1906,7 @@ Current file: space-blimp.s
 000936r 1  20 rr rr     	jsr     pusha0
 000939r 1  A0 04        	ldy     #$04
 00093Br 1  20 rr rr     	jsr     _printf
-00093Er 1               	.dbg	line, "space-blimp.c", 251
+00093Er 1               	.dbg	line, "space-blimp.c", 258
 00093Er 1  A0 02        	ldy     #$02
 000940r 1  B1 rr        	lda     (sp),y
 000942r 1  85 rr        	sta     ptr1+1
@@ -1916,7 +1916,7 @@ Current file: space-blimp.s
 000949r 1  B1 rr        	lda     (ptr1),y
 00094Br 1  88           	dey
 00094Cr 1  91 rr        	sta     (sp),y
-00094Er 1               	.dbg	line, "space-blimp.c", 252
+00094Er 1               	.dbg	line, "space-blimp.c", 259
 00094Er 1  A9 rr        	lda     #<(S000B)
 000950r 1  A2 rr        	ldx     #>(S000B)
 000952r 1  20 rr rr     	jsr     pushax
@@ -1925,7 +1925,7 @@ Current file: space-blimp.s
 000959r 1  49 02        	eor     #$02
 00095Br 1  2D 15 D0     	and     $D015
 00095Er 1  20 rr rr     	jsr     pusha0
-000961r 1               	.dbg	line, "space-blimp.c", 253
+000961r 1               	.dbg	line, "space-blimp.c", 260
 000961r 1  A0 04        	ldy     #$04
 000963r 1  B1 rr        	lda     (sp),y
 000965r 1  0A           	asl     a
@@ -1954,7 +1954,7 @@ Current file: space-blimp.s
 00098Er 1  20 rr rr     	jsr     pusha0
 000991r 1  A0 08        	ldy     #$08
 000993r 1  20 rr rr     	jsr     _printf
-000996r 1               	.dbg	line, "space-blimp.c", 254
+000996r 1               	.dbg	line, "space-blimp.c", 261
 000996r 1  4C rr rr     	jmp     incsp3
 000999r 1               
 000999r 1               	.dbg	line
@@ -1973,9 +1973,9 @@ Current file: space-blimp.s
 000999r 1               
 000999r 1               .segment	"CODE"
 000999r 1               
-000999r 1               	.dbg	line, "space-blimp.c", 221
+000999r 1               	.dbg	line, "space-blimp.c", 228
 000999r 1  20 rr rr     	jsr     pushax
-00099Cr 1               	.dbg	line, "space-blimp.c", 222
+00099Cr 1               	.dbg	line, "space-blimp.c", 229
 00099Cr 1  A0 01        	ldy     #$01
 00099Er 1  B1 rr        	lda     (sp),y
 0009A0r 1  85 rr        	sta     ptr1+1
@@ -1985,7 +1985,7 @@ Current file: space-blimp.s
 0009A7r 1  B1 rr        	lda     (ptr1),y
 0009A9r 1  C9 01        	cmp     #$01
 0009ABr 1  D0 51        	bne     L0002
-0009ADr 1               	.dbg	line, "space-blimp.c", 223
+0009ADr 1               	.dbg	line, "space-blimp.c", 230
 0009ADr 1  C8           	iny
 0009AEr 1  B1 rr        	lda     (sp),y
 0009B0r 1  85 rr        	sta     ptr1+1
@@ -1995,7 +1995,7 @@ Current file: space-blimp.s
 0009B7r 1  C8           	iny
 0009B8r 1  B1 rr        	lda     (ptr1),y
 0009BAr 1  20 rr rr     	jsr     pusha
-0009BDr 1               	.dbg	line, "space-blimp.c", 226
+0009BDr 1               	.dbg	line, "space-blimp.c", 233
 0009BDr 1  A2 00        	ldx     #$00
 0009BFr 1  A1 rr        	lda     (sp,x)
 0009C1r 1  0A           	asl     a
@@ -2016,7 +2016,7 @@ Current file: space-blimp.s
 0009DAr 1  B1 rr        	lda     (ptr1),y
 0009DCr 1  A0 01        	ldy     #$01
 0009DEr 1  91 rr        	sta     (sreg),y
-0009E0r 1               	.dbg	line, "space-blimp.c", 227
+0009E0r 1               	.dbg	line, "space-blimp.c", 234
 0009E0r 1  88           	dey
 0009E1r 1  B1 rr        	lda     (sp),y
 0009E3r 1  20 rr rr     	jsr     pusha
@@ -2032,9 +2032,9 @@ Current file: space-blimp.s
 0009F5r 1  88           	dey
 0009F6r 1  B1 rr        	lda     (ptr1),y
 0009F8r 1  20 rr rr     	jsr     _set_sprite_x
-0009FBr 1               	.dbg	line, "space-blimp.c", 230
+0009FBr 1               	.dbg	line, "space-blimp.c", 237
 0009FBr 1  20 rr rr     	jsr     incsp1
-0009FEr 1               	.dbg	line, "space-blimp.c", 234
+0009FEr 1               	.dbg	line, "space-blimp.c", 241
 0009FEr 1  4C rr rr     L0002:	jmp     incsp2
 000A01r 1               
 000A01r 1               	.dbg	line
@@ -2053,9 +2053,9 @@ Current file: space-blimp.s
 000A01r 1               
 000A01r 1               .segment	"CODE"
 000A01r 1               
-000A01r 1               	.dbg	line, "space-blimp.c", 395
+000A01r 1               	.dbg	line, "space-blimp.c", 402
 000A01r 1  20 rr rr     	jsr     pushax
-000A04r 1               	.dbg	line, "space-blimp.c", 396
+000A04r 1               	.dbg	line, "space-blimp.c", 403
 000A04r 1  20 rr rr     	jsr     pushw0sp
 000A07r 1  A0 03        	ldy     #$03
 000A09r 1  B1 rr        	lda     (sp),y
@@ -2083,7 +2083,7 @@ Current file: space-blimp.s
 000A32r 1  20 rr rr     	jsr     tosmoda0
 000A35r 1  A0 15        	ldy     #$15
 000A37r 1  20 rr rr     	jsr     staspidx
-000A3Ar 1               	.dbg	line, "space-blimp.c", 397
+000A3Ar 1               	.dbg	line, "space-blimp.c", 404
 000A3Ar 1  A0 01        	ldy     #$01
 000A3Cr 1  B1 rr        	lda     (sp),y
 000A3Er 1  85 rr        	sta     ptr1+1
@@ -2129,7 +2129,7 @@ Current file: space-blimp.s
 000A86r 1  A0 00        	ldy     #$00
 000A88r 1  B1 rr        	lda     (ptr1),y
 000A8Ar 1  91 rr        	sta     (ptr2),y
-000A8Cr 1               	.dbg	line, "space-blimp.c", 399
+000A8Cr 1               	.dbg	line, "space-blimp.c", 406
 000A8Cr 1  4C rr rr     	jmp     incsp2
 000A8Fr 1               
 000A8Fr 1               	.dbg	line
@@ -2148,9 +2148,9 @@ Current file: space-blimp.s
 000A8Fr 1               
 000A8Fr 1               .segment	"CODE"
 000A8Fr 1               
-000A8Fr 1               	.dbg	line, "space-blimp.c", 401
+000A8Fr 1               	.dbg	line, "space-blimp.c", 408
 000A8Fr 1  20 rr rr     	jsr     pushax
-000A92r 1               	.dbg	line, "space-blimp.c", 402
+000A92r 1               	.dbg	line, "space-blimp.c", 409
 000A92r 1  20 rr rr     	jsr     pushw0sp
 000A95r 1  A0 03        	ldy     #$03
 000A97r 1  B1 rr        	lda     (sp),y
@@ -2178,7 +2178,7 @@ Current file: space-blimp.s
 000AC0r 1  20 rr rr     	jsr     tosmoda0
 000AC3r 1  A0 15        	ldy     #$15
 000AC5r 1  20 rr rr     	jsr     staspidx
-000AC8r 1               	.dbg	line, "space-blimp.c", 403
+000AC8r 1               	.dbg	line, "space-blimp.c", 410
 000AC8r 1  A0 01        	ldy     #$01
 000ACAr 1  B1 rr        	lda     (sp),y
 000ACCr 1  85 rr        	sta     ptr1+1
@@ -2224,7 +2224,7 @@ Current file: space-blimp.s
 000B14r 1  A0 00        	ldy     #$00
 000B16r 1  B1 rr        	lda     (ptr1),y
 000B18r 1  91 rr        	sta     (ptr2),y
-000B1Ar 1               	.dbg	line, "space-blimp.c", 405
+000B1Ar 1               	.dbg	line, "space-blimp.c", 412
 000B1Ar 1  4C rr rr     	jmp     incsp2
 000B1Dr 1               
 000B1Dr 1               	.dbg	line
@@ -2243,371 +2243,384 @@ Current file: space-blimp.s
 000B1Dr 1               
 000B1Dr 1               .segment	"CODE"
 000B1Dr 1               
-000B1Dr 1               	.dbg	line, "space-blimp.c", 97
+000B1Dr 1               	.dbg	line, "space-blimp.c", 101
 000B1Dr 1  20 rr rr     	jsr     decsp1
-000B20r 1  AD 20 D0     	lda     $D020
-000B23r 1  A0 00        	ldy     #$00
-000B25r 1  91 rr        	sta     (sp),y
-000B27r 1               	.dbg	line, "space-blimp.c", 98
-000B27r 1  A2 00        	ldx     #$00
-000B29r 1  A9 01        	lda     #$01
-000B2Br 1  8D 20 D0     	sta     $D020
-000B2Er 1               	.dbg	line, "space-blimp.c", 100
-000B2Er 1  20 rr rr     	jsr     _move_mobs
-000B31r 1               	.dbg	line, "space-blimp.c", 101
-000B31r 1  20 rr rr     	jsr     _draw_mobs
-000B34r 1               	.dbg	line, "space-blimp.c", 103
-000B34r 1  A0 00        	ldy     #$00
-000B36r 1  B1 rr        	lda     (sp),y
-000B38r 1  8D 20 D0     	sta     $D020
-000B3Br 1               	.dbg	line, "space-blimp.c", 105
-000B3Br 1  A2 00        	ldx     #$00
-000B3Dr 1  8A           	txa
-000B3Er 1               	.dbg	line, "space-blimp.c", 106
-000B3Er 1  4C rr rr     	jmp     incsp1
-000B41r 1               
-000B41r 1               	.dbg	line
-000B41r 1               .endproc
-000B41r 1               
-000B41r 1               ; ---------------------------------------------------------------
-000B41r 1               ; void __near__ reset_bomb (void)
-000B41r 1               ; ---------------------------------------------------------------
-000B41r 1               
-000B41r 1               .segment	"CODE"
-000B41r 1               
-000B41r 1               .proc	_reset_bomb: near
-000B41r 1               
-000B41r 1               	.dbg	func, "reset_bomb", "00", extern, "_reset_bomb"
-000B41r 1               	.dbg	sym, "m", "00", auto, -2
-000B41r 1               
-000B41r 1               .segment	"CODE"
-000B41r 1               
-000B41r 1               	.dbg	line, "space-blimp.c", 342
-000B41r 1  20 rr rr     	jsr     decsp2
-000B44r 1  A9 rr        	lda     #<(_mobs+24)
-000B46r 1  A2 rr        	ldx     #>(_mobs+24)
-000B48r 1  20 rr rr     	jsr     stax0sp
-000B4Br 1               	.dbg	line, "space-blimp.c", 344
-000B4Br 1  85 rr        	sta     ptr1
-000B4Dr 1  86 rr        	stx     ptr1+1
-000B4Fr 1  A9 00        	lda     #$00
-000B51r 1  A0 0B        	ldy     #$0B
-000B53r 1  91 rr        	sta     (ptr1),y
-000B55r 1               	.dbg	line, "space-blimp.c", 345
-000B55r 1  A0 01        	ldy     #$01
-000B57r 1  B1 rr        	lda     (sp),y
-000B59r 1  85 rr        	sta     ptr1+1
-000B5Br 1  88           	dey
+000B20r 1  A9 01        	lda     #$01
+000B22r 1  8D 19 D0     	sta     $D019
+000B25r 1               	.dbg	line, "space-blimp.c", 102
+000B25r 1  AD 20 D0     	lda     $D020
+000B28r 1  A0 00        	ldy     #$00
+000B2Ar 1  91 rr        	sta     (sp),y
+000B2Cr 1               	.dbg	line, "space-blimp.c", 103
+000B2Cr 1  A2 00        	ldx     #$00
+000B2Er 1  A9 01        	lda     #$01
+000B30r 1  8D 20 D0     	sta     $D020
+000B33r 1               	.dbg	line, "space-blimp.c", 105
+000B33r 1  20 rr rr     	jsr     _move_mobs
+000B36r 1               	.dbg	line, "space-blimp.c", 106
+000B36r 1  20 rr rr     	jsr     _draw_mobs
+000B39r 1               	.dbg	line, "space-blimp.c", 108
+000B39r 1  A0 00        	ldy     #$00
+000B3Br 1  B1 rr        	lda     (sp),y
+000B3Dr 1  8D 20 D0     	sta     $D020
+000B40r 1               	.dbg	line, "space-blimp.c", 112
+000B40r 1  A2 00        	ldx     #$00
+000B42r 1  8A           	txa
+000B43r 1               	.dbg	line, "space-blimp.c", 113
+000B43r 1  4C rr rr     	jmp     incsp1
+000B46r 1               
+000B46r 1               	.dbg	line
+000B46r 1               .endproc
+000B46r 1               
+000B46r 1               ; ---------------------------------------------------------------
+000B46r 1               ; void __near__ reset_bomb (void)
+000B46r 1               ; ---------------------------------------------------------------
+000B46r 1               
+000B46r 1               .segment	"CODE"
+000B46r 1               
+000B46r 1               .proc	_reset_bomb: near
+000B46r 1               
+000B46r 1               	.dbg	func, "reset_bomb", "00", extern, "_reset_bomb"
+000B46r 1               	.dbg	sym, "m", "00", auto, -2
+000B46r 1               
+000B46r 1               .segment	"CODE"
+000B46r 1               
+000B46r 1               	.dbg	line, "space-blimp.c", 349
+000B46r 1  20 rr rr     	jsr     decsp2
+000B49r 1  A9 rr        	lda     #<(_mobs+24)
+000B4Br 1  A2 rr        	ldx     #>(_mobs+24)
+000B4Dr 1  20 rr rr     	jsr     stax0sp
+000B50r 1               	.dbg	line, "space-blimp.c", 351
+000B50r 1  85 rr        	sta     ptr1
+000B52r 1  86 rr        	stx     ptr1+1
+000B54r 1  A9 00        	lda     #$00
+000B56r 1  A0 0B        	ldy     #$0B
+000B58r 1  91 rr        	sta     (ptr1),y
+000B5Ar 1               	.dbg	line, "space-blimp.c", 352
+000B5Ar 1  A0 01        	ldy     #$01
 000B5Cr 1  B1 rr        	lda     (sp),y
-000B5Er 1  85 rr        	sta     ptr1
-000B60r 1  AD rr rr     	lda     _mobs+10
-000B63r 1  A0 0A        	ldy     #$0A
-000B65r 1  91 rr        	sta     (ptr1),y
-000B67r 1               	.dbg	line, "space-blimp.c", 347
-000B67r 1  A0 01        	ldy     #$01
-000B69r 1  B1 rr        	lda     (sp),y
-000B6Br 1  85 rr        	sta     ptr1+1
-000B6Dr 1  88           	dey
+000B5Er 1  85 rr        	sta     ptr1+1
+000B60r 1  88           	dey
+000B61r 1  B1 rr        	lda     (sp),y
+000B63r 1  85 rr        	sta     ptr1
+000B65r 1  AD rr rr     	lda     _mobs+10
+000B68r 1  A0 0A        	ldy     #$0A
+000B6Ar 1  91 rr        	sta     (ptr1),y
+000B6Cr 1               	.dbg	line, "space-blimp.c", 354
+000B6Cr 1  A0 01        	ldy     #$01
 000B6Er 1  B1 rr        	lda     (sp),y
-000B70r 1  85 rr        	sta     ptr1
-000B72r 1  AD rr rr     	lda     _mobs+2
-000B75r 1  A0 02        	ldy     #$02
-000B77r 1  91 rr        	sta     (ptr1),y
-000B79r 1  C8           	iny
-000B7Ar 1  AD rr rr     	lda     _mobs+2+1
-000B7Dr 1  91 rr        	sta     (ptr1),y
-000B7Fr 1               	.dbg	line, "space-blimp.c", 348
-000B7Fr 1  A0 01        	ldy     #$01
-000B81r 1  B1 rr        	lda     (sp),y
-000B83r 1  85 rr        	sta     ptr1+1
-000B85r 1  88           	dey
+000B70r 1  85 rr        	sta     ptr1+1
+000B72r 1  88           	dey
+000B73r 1  B1 rr        	lda     (sp),y
+000B75r 1  85 rr        	sta     ptr1
+000B77r 1  AD rr rr     	lda     _mobs+2
+000B7Ar 1  A0 02        	ldy     #$02
+000B7Cr 1  91 rr        	sta     (ptr1),y
+000B7Er 1  C8           	iny
+000B7Fr 1  AD rr rr     	lda     _mobs+2+1
+000B82r 1  91 rr        	sta     (ptr1),y
+000B84r 1               	.dbg	line, "space-blimp.c", 355
+000B84r 1  A0 01        	ldy     #$01
 000B86r 1  B1 rr        	lda     (sp),y
-000B88r 1  85 rr        	sta     ptr1
-000B8Ar 1  AD rr rr     	lda     _mobs+4
-000B8Dr 1  A0 04        	ldy     #$04
-000B8Fr 1  91 rr        	sta     (ptr1),y
-000B91r 1  C8           	iny
-000B92r 1  AD rr rr     	lda     _mobs+4+1
-000B95r 1  91 rr        	sta     (ptr1),y
-000B97r 1               	.dbg	line, "space-blimp.c", 350
-000B97r 1  A0 01        	ldy     #$01
-000B99r 1  B1 rr        	lda     (sp),y
-000B9Br 1  85 rr        	sta     ptr1+1
-000B9Dr 1  88           	dey
+000B88r 1  85 rr        	sta     ptr1+1
+000B8Ar 1  88           	dey
+000B8Br 1  B1 rr        	lda     (sp),y
+000B8Dr 1  85 rr        	sta     ptr1
+000B8Fr 1  AD rr rr     	lda     _mobs+4
+000B92r 1  A0 04        	ldy     #$04
+000B94r 1  91 rr        	sta     (ptr1),y
+000B96r 1  C8           	iny
+000B97r 1  AD rr rr     	lda     _mobs+4+1
+000B9Ar 1  91 rr        	sta     (ptr1),y
+000B9Cr 1               	.dbg	line, "space-blimp.c", 357
+000B9Cr 1  A0 01        	ldy     #$01
 000B9Er 1  B1 rr        	lda     (sp),y
-000BA0r 1  85 rr        	sta     ptr1
-000BA2r 1  AD rr rr     	lda     _mobs+21
-000BA5r 1  A0 15        	ldy     #$15
-000BA7r 1  91 rr        	sta     (ptr1),y
-000BA9r 1               	.dbg	line, "space-blimp.c", 351
-000BA9r 1  A0 01        	ldy     #$01
-000BABr 1  B1 rr        	lda     (sp),y
-000BADr 1  85 rr        	sta     ptr1+1
-000BAFr 1  88           	dey
+000BA0r 1  85 rr        	sta     ptr1+1
+000BA2r 1  88           	dey
+000BA3r 1  B1 rr        	lda     (sp),y
+000BA5r 1  85 rr        	sta     ptr1
+000BA7r 1  AD rr rr     	lda     _mobs+21
+000BAAr 1  A0 15        	ldy     #$15
+000BACr 1  91 rr        	sta     (ptr1),y
+000BAEr 1               	.dbg	line, "space-blimp.c", 358
+000BAEr 1  A0 01        	ldy     #$01
 000BB0r 1  B1 rr        	lda     (sp),y
-000BB2r 1  85 rr        	sta     ptr1
-000BB4r 1  A9 rr        	lda     #<(_sprite_switching_bouncy_border_collision_handler)
-000BB6r 1  A0 10        	ldy     #$10
-000BB8r 1  91 rr        	sta     (ptr1),y
-000BBAr 1  C8           	iny
-000BBBr 1  A9 rr        	lda     #>(_sprite_switching_bouncy_border_collision_handler)
+000BB2r 1  85 rr        	sta     ptr1+1
+000BB4r 1  88           	dey
+000BB5r 1  B1 rr        	lda     (sp),y
+000BB7r 1  85 rr        	sta     ptr1
+000BB9r 1  A9 rr        	lda     #<(_sprite_switching_bouncy_border_collision_handler)
+000BBBr 1  A0 10        	ldy     #$10
 000BBDr 1  91 rr        	sta     (ptr1),y
-000BBFr 1               	.dbg	line, "space-blimp.c", 352
-000BBFr 1  4C rr rr     	jmp     incsp2
-000BC2r 1               
-000BC2r 1               	.dbg	line
-000BC2r 1               .endproc
-000BC2r 1               
-000BC2r 1               ; ---------------------------------------------------------------
-000BC2r 1               ; int __near__ set_sprite (struct MOB *m, unsigned char sprite_num)
-000BC2r 1               ; ---------------------------------------------------------------
-000BC2r 1               
-000BC2r 1               .segment	"CODE"
-000BC2r 1               
-000BC2r 1               .proc	_set_sprite: near
-000BC2r 1               
-000BC2r 1               	.dbg	func, "set_sprite", "00", extern, "_set_sprite"
-000BC2r 1               	.dbg	sym, "m", "00", auto, 1
-000BC2r 1               	.dbg	sym, "sprite_num", "00", auto, 0
-000BC2r 1               
-000BC2r 1               .segment	"CODE"
-000BC2r 1               
-000BC2r 1               	.dbg	line, "space-blimp.c", 236
-000BC2r 1  20 rr rr     	jsr     pusha
-000BC5r 1               	.dbg	line, "space-blimp.c", 237
-000BC5r 1  A0 02        	ldy     #$02
-000BC7r 1  B1 rr        	lda     (sp),y
-000BC9r 1  85 rr        	sta     ptr1+1
-000BCBr 1  88           	dey
+000BBFr 1  C8           	iny
+000BC0r 1  A9 rr        	lda     #>(_sprite_switching_bouncy_border_collision_handler)
+000BC2r 1  91 rr        	sta     (ptr1),y
+000BC4r 1               	.dbg	line, "space-blimp.c", 359
+000BC4r 1  4C rr rr     	jmp     incsp2
+000BC7r 1               
+000BC7r 1               	.dbg	line
+000BC7r 1               .endproc
+000BC7r 1               
+000BC7r 1               ; ---------------------------------------------------------------
+000BC7r 1               ; int __near__ set_sprite (struct MOB *m, unsigned char sprite_num)
+000BC7r 1               ; ---------------------------------------------------------------
+000BC7r 1               
+000BC7r 1               .segment	"CODE"
+000BC7r 1               
+000BC7r 1               .proc	_set_sprite: near
+000BC7r 1               
+000BC7r 1               	.dbg	func, "set_sprite", "00", extern, "_set_sprite"
+000BC7r 1               	.dbg	sym, "m", "00", auto, 1
+000BC7r 1               	.dbg	sym, "sprite_num", "00", auto, 0
+000BC7r 1               
+000BC7r 1               .segment	"CODE"
+000BC7r 1               
+000BC7r 1               	.dbg	line, "space-blimp.c", 243
+000BC7r 1  20 rr rr     	jsr     pusha
+000BCAr 1               	.dbg	line, "space-blimp.c", 244
+000BCAr 1  A0 02        	ldy     #$02
 000BCCr 1  B1 rr        	lda     (sp),y
-000BCEr 1  85 rr        	sta     ptr1
+000BCEr 1  85 rr        	sta     ptr1+1
 000BD0r 1  88           	dey
 000BD1r 1  B1 rr        	lda     (sp),y
-000BD3r 1  C8           	iny
-000BD4r 1  91 rr        	sta     (ptr1),y
-000BD6r 1               	.dbg	line, "space-blimp.c", 238
-000BD6r 1  20 rr rr     	jsr     decsp3
-000BD9r 1  A9 15        	lda     #$15
-000BDBr 1  91 rr        	sta     (sp),y
-000BDDr 1  C8           	iny
-000BDEr 1  A9 D0        	lda     #$D0
+000BD3r 1  85 rr        	sta     ptr1
+000BD5r 1  88           	dey
+000BD6r 1  B1 rr        	lda     (sp),y
+000BD8r 1  C8           	iny
+000BD9r 1  91 rr        	sta     (ptr1),y
+000BDBr 1               	.dbg	line, "space-blimp.c", 245
+000BDBr 1  20 rr rr     	jsr     decsp3
+000BDEr 1  A9 15        	lda     #$15
 000BE0r 1  91 rr        	sta     (sp),y
 000BE2r 1  C8           	iny
-000BE3r 1  B1 rr        	lda     (sp),y
-000BE5r 1  A0 00        	ldy     #$00
-000BE7r 1  91 rr        	sta     (sp),y
-000BE9r 1  A9 01        	lda     #$01
-000BEBr 1  20 rr rr     	jsr     _set_bit
-000BEEr 1               	.dbg	line, "space-blimp.c", 242
-000BEEr 1  4C rr rr     	jmp     incsp3
-000BF1r 1               
-000BF1r 1               	.dbg	line
-000BF1r 1               .endproc
-000BF1r 1               
-000BF1r 1               ; ---------------------------------------------------------------
-000BF1r 1               ; int __near__ __cdecl__ main (int argc, char **argv)
-000BF1r 1               ; ---------------------------------------------------------------
-000BF1r 1               
-000BF1r 1               .segment	"CODE"
-000BF1r 1               
-000BF1r 1               .proc	_main: near
-000BF1r 1               
-000BF1r 1               	.dbg	func, "main", "00", extern, "_main"
-000BF1r 1               	.dbg	sym, "argc", "00", auto, 2
-000BF1r 1               	.dbg	sym, "argv", "00", auto, 0
-000BF1r 1               	.dbg	sym, "t", "00", auto, -1
-000BF1r 1               
-000BF1r 1               .segment	"CODE"
-000BF1r 1               
-000BF1r 1               	.dbg	line, "space-blimp.c", 36
-000BF1r 1  A9 00        	lda     #$00
-000BF3r 1  20 rr rr     	jsr     pusha
-000BF6r 1               	.dbg	line, "space-blimp.c", 38
-000BF6r 1  20 rr rr     	jsr     _clrscr
-000BF9r 1               	.dbg	line, "space-blimp.c", 39
-000BF9r 1  A9 00        	lda     #$00
-000BFBr 1  8D 21 D0     	sta     $D021
-000BFEr 1               	.dbg	line, "space-blimp.c", 40
-000BFEr 1  AA           	tax
-000BFFr 1  8D 20 D0     	sta     $D020
-000C02r 1               	.dbg	line, "space-blimp.c", 42
-000C02r 1  20 rr rr     	jsr     _handle_sprites
-000C05r 1               	.dbg	line, "space-blimp.c", 45
-000C05r 1  A9 03        	lda     #$03
-000C07r 1  8D 15 D0     	sta     $D015
-000C0Ar 1               	.dbg	line, "space-blimp.c", 46
-000C0Ar 1  A9 FF        	lda     #$FF
-000C0Cr 1  8D 1C D0     	sta     $D01C
-000C0Fr 1               	.dbg	line, "space-blimp.c", 48
-000C0Fr 1  A9 02        	lda     #$02
-000C11r 1  8D 25 D0     	sta     $D025
-000C14r 1               	.dbg	line, "space-blimp.c", 49
-000C14r 1  A9 01        	lda     #$01
-000C16r 1  8D 26 D0     	sta     $D026
-000C19r 1               	.dbg	line, "space-blimp.c", 51
-000C19r 1  A9 0B        	lda     #$0B
-000C1Br 1  8D 27 D0     	sta     $D027
-000C1Er 1               	.dbg	line, "space-blimp.c", 52
-000C1Er 1  8D 28 D0     	sta     $D028
-000C21r 1               	.dbg	line, "space-blimp.c", 54
-000C21r 1  A9 rr        	lda     #<(S0002)
-000C23r 1  A2 rr        	ldx     #>(S0002)
-000C25r 1  20 rr rr     	jsr     pushax
-000C28r 1  A0 02        	ldy     #$02
-000C2Ar 1  20 rr rr     	jsr     _printf
-000C2Dr 1               	.dbg	line, "space-blimp.c", 56
-000C2Dr 1  A9 00        	lda     #$00
-000C2Fr 1  8D rr rr     	sta     _x_counter+1
-000C32r 1               	.dbg	line, "space-blimp.c", 57
-000C32r 1  AA           	tax
-000C33r 1  8D rr rr     	sta     _y_counter+1
-000C36r 1               	.dbg	line, "space-blimp.c", 59
-000C36r 1  20 rr rr     	jsr     _init_mobs
-000C39r 1               	.dbg	line, "space-blimp.c", 60
-000C39r 1  20 rr rr     	jsr     _draw_mobs
-000C3Cr 1               	.dbg	line, "space-blimp.c", 63
-000C3Cr 1  A9 E7        	lda     #$E7
-000C3Er 1  8D 12 D0     	sta     $D012
-000C41r 1               	.dbg	line, "space-blimp.c", 64
-000C41r 1  20 rr rr     	jsr     decsp4
-000C44r 1  A9 rr        	lda     #<(_do_IRQ)
-000C46r 1  A0 02        	ldy     #$02
-000C48r 1  91 rr        	sta     (sp),y
-000C4Ar 1  C8           	iny
-000C4Br 1  A9 rr        	lda     #>(_do_IRQ)
-000C4Dr 1  91 rr        	sta     (sp),y
-000C4Fr 1  A9 rr        	lda     #<(_irq_stack)
-000C51r 1  A0 00        	ldy     #$00
-000C53r 1  91 rr        	sta     (sp),y
-000C55r 1  C8           	iny
-000C56r 1  A9 rr        	lda     #>(_irq_stack)
-000C58r 1  91 rr        	sta     (sp),y
-000C5Ar 1  A2 00        	ldx     #$00
-000C5Cr 1  A9 40        	lda     #$40
-000C5Er 1  20 rr rr     	jsr     _set_irq
-000C61r 1               	.dbg	line, "space-blimp.c", 67
-000C61r 1  20 rr rr     L0002:	jsr     _kbhit
-000C64r 1  AA           	tax
-000C65r 1  F0 FA        	beq     L0002
-000C67r 1  20 rr rr     	jsr     _cgetc
-000C6Ar 1  C9 20        	cmp     #$20
-000C6Cr 1  D0 F3        	bne     L0002
-000C6Er 1               	.dbg	line, "space-blimp.c", 68
-000C6Er 1  A9 rr        	lda     #<(S0003)
-000C70r 1  A2 rr        	ldx     #>(S0003)
-000C72r 1  20 rr rr     	jsr     pushax
-000C75r 1  A0 02        	ldy     #$02
-000C77r 1  20 rr rr     	jsr     _printf
-000C7Ar 1               	.dbg	line, "space-blimp.c", 69
-000C7Ar 1  A9 01        	lda     #$01
-000C7Cr 1  8D rr rr     	sta     _mobs+35
-000C7Fr 1               	.dbg	line, "space-blimp.c", 71
-000C7Fr 1  A9 rr        	lda     #>(_bomb_border_collision_handler)
-000C81r 1  8D rr rr     	sta     _mobs+40+1
-000C84r 1  A9 rr        	lda     #<(_bomb_border_collision_handler)
-000C86r 1  8D rr rr     	sta     _mobs+40
-000C89r 1               	.dbg	line, "space-blimp.c", 66
-000C89r 1  4C rr rr     	jmp     L0002
-000C8Cr 1               
-000C8Cr 1               	.dbg	line
-000C8Cr 1               .endproc
-000C8Cr 1               
-000C8Cr 1               ; ---------------------------------------------------------------
-000C8Cr 1               ; void __near__ set_bit (unsigned char *val, unsigned char bit_num, unsigned char bit_val)
-000C8Cr 1               ; ---------------------------------------------------------------
-000C8Cr 1               
-000C8Cr 1               .segment	"CODE"
-000C8Cr 1               
-000C8Cr 1               .proc	_set_bit: near
-000C8Cr 1               
-000C8Cr 1               	.dbg	func, "set_bit", "00", extern, "_set_bit"
-000C8Cr 1               	.dbg	sym, "val", "00", auto, 2
-000C8Cr 1               	.dbg	sym, "bit_num", "00", auto, 1
-000C8Cr 1               	.dbg	sym, "bit_val", "00", auto, 0
-000C8Cr 1               	.dbg	sym, "pwr2", "00", auto, -1
-000C8Cr 1               
-000C8Cr 1               .segment	"CODE"
-000C8Cr 1               
-000C8Cr 1               	.dbg	line, "space-blimp.c", 199
-000C8Cr 1  20 rr rr     	jsr     pusha
-000C8Fr 1               	.dbg	line, "space-blimp.c", 200
-000C8Fr 1  A0 01        	ldy     #$01
-000C91r 1  B1 rr        	lda     (sp),y
-000C93r 1  A8           	tay
-000C94r 1  B9 rr rr     	lda     _pow2,y
-000C97r 1  20 rr rr     	jsr     pusha
-000C9Ar 1               	.dbg	line, "space-blimp.c", 202
-000C9Ar 1  A0 02        	ldy     #$02
-000C9Cr 1  B1 rr        	lda     (sp),y
-000C9Er 1  C9 09        	cmp     #$09
-000CA0r 1  90 0E        	bcc     L0004
-000CA2r 1  A9 rr        	lda     #<(S0006)
-000CA4r 1  A2 rr        	ldx     #>(S0006)
-000CA6r 1  20 rr rr     	jsr     pushax
-000CA9r 1  A2 00        	ldx     #$00
-000CABr 1  A9 CA        	lda     #$CA
-000CADr 1  20 rr rr     	jsr     __afailed
-000CB0r 1               	.dbg	line, "space-blimp.c", 204
-000CB0r 1  A0 01        L0004:	ldy     #$01
-000CB2r 1  B1 rr        	lda     (sp),y
-000CB4r 1  F0 1D        	beq     L0005
-000CB6r 1               	.dbg	line, "space-blimp.c", 205
-000CB6r 1  A0 04        	ldy     #$04
-000CB8r 1  B1 rr        	lda     (sp),y
-000CBAr 1  AA           	tax
-000CBBr 1  88           	dey
-000CBCr 1  B1 rr        	lda     (sp),y
-000CBEr 1  85 rr        	sta     sreg
-000CC0r 1  86 rr        	stx     sreg+1
-000CC2r 1  85 rr        	sta     ptr1
-000CC4r 1  86 rr        	stx     ptr1+1
-000CC6r 1  A0 00        	ldy     #$00
-000CC8r 1  B1 rr        	lda     (ptr1),y
-000CCAr 1  85 rr        	sta     ptr1
-000CCCr 1  B1 rr        	lda     (sp),y
-000CCEr 1  05 rr        	ora     ptr1
-000CD0r 1               	.dbg	line, "space-blimp.c", 207
-000CD0r 1  4C rr rr     	jmp     L0009
-000CD3r 1               	.dbg	line, "space-blimp.c", 208
-000CD3r 1  A0 04        L0005:	ldy     #$04
-000CD5r 1  B1 rr        	lda     (sp),y
-000CD7r 1  AA           	tax
-000CD8r 1  88           	dey
-000CD9r 1  B1 rr        	lda     (sp),y
-000CDBr 1  85 rr        	sta     sreg
-000CDDr 1  86 rr        	stx     sreg+1
-000CDFr 1  85 rr        	sta     ptr1
-000CE1r 1  86 rr        	stx     ptr1+1
-000CE3r 1  A0 00        	ldy     #$00
-000CE5r 1  B1 rr        	lda     (ptr1),y
-000CE7r 1  85 rr        	sta     ptr1
-000CE9r 1  A9 FF        	lda     #$FF
-000CEBr 1  38           	sec
-000CECr 1  F1 rr        	sbc     (sp),y
-000CEEr 1  25 rr        	and     ptr1
-000CF0r 1  91 rr        L0009:	sta     (sreg),y
-000CF2r 1               	.dbg	line, "space-blimp.c", 210
-000CF2r 1  4C rr rr     	jmp     incsp5
-000CF5r 1               
-000CF5r 1               	.dbg	line
-000CF5r 1               .endproc
-000CF5r 1               
-000CF5r 1               ; ---------------------------------------------------------------
-000CF5r 1               ; void __near__ clr_screen (void)
-000CF5r 1               ; ---------------------------------------------------------------
-000CF5r 1               
-000CF5r 1               .segment	"CODE"
-000CF5r 1               
-000CF5r 1               .proc	_clr_screen: near
-000CF5r 1               
-000CF5r 1               	.dbg	func, "clr_screen", "00", extern, "_clr_screen"
-000CF5r 1               
-000CF5r 1               .segment	"CODE"
-000CF5r 1               
-000CF5r 1               	.dbg	line, "space-blimp.c", 268
-000CF5r 1  4C 44 E5     	jmp     $E544
-000CF8r 1               
-000CF8r 1               	.dbg	line
-000CF8r 1               .endproc
-000CF8r 1               
-000CF8r 1               
+000BE3r 1  A9 D0        	lda     #$D0
+000BE5r 1  91 rr        	sta     (sp),y
+000BE7r 1  C8           	iny
+000BE8r 1  B1 rr        	lda     (sp),y
+000BEAr 1  A0 00        	ldy     #$00
+000BECr 1  91 rr        	sta     (sp),y
+000BEEr 1  A9 01        	lda     #$01
+000BF0r 1  20 rr rr     	jsr     _set_bit
+000BF3r 1               	.dbg	line, "space-blimp.c", 249
+000BF3r 1  4C rr rr     	jmp     incsp3
+000BF6r 1               
+000BF6r 1               	.dbg	line
+000BF6r 1               .endproc
+000BF6r 1               
+000BF6r 1               ; ---------------------------------------------------------------
+000BF6r 1               ; int __near__ __cdecl__ main (int argc, char **argv)
+000BF6r 1               ; ---------------------------------------------------------------
+000BF6r 1               
+000BF6r 1               .segment	"CODE"
+000BF6r 1               
+000BF6r 1               .proc	_main: near
+000BF6r 1               
+000BF6r 1               	.dbg	func, "main", "00", extern, "_main"
+000BF6r 1               	.dbg	sym, "argc", "00", auto, 2
+000BF6r 1               	.dbg	sym, "argv", "00", auto, 0
+000BF6r 1               	.dbg	sym, "t", "00", auto, -1
+000BF6r 1               
+000BF6r 1               .segment	"CODE"
+000BF6r 1               
+000BF6r 1               	.dbg	line, "space-blimp.c", 36
+000BF6r 1  A9 00        	lda     #$00
+000BF8r 1  20 rr rr     	jsr     pusha
+000BFBr 1               	.dbg	line, "space-blimp.c", 38
+000BFBr 1  20 rr rr     	jsr     _clrscr
+000BFEr 1               	.dbg	line, "space-blimp.c", 39
+000BFEr 1  A9 00        	lda     #$00
+000C00r 1  8D 21 D0     	sta     $D021
+000C03r 1               	.dbg	line, "space-blimp.c", 40
+000C03r 1  AA           	tax
+000C04r 1  8D 20 D0     	sta     $D020
+000C07r 1               	.dbg	line, "space-blimp.c", 42
+000C07r 1  20 rr rr     	jsr     _handle_sprites
+000C0Ar 1               	.dbg	line, "space-blimp.c", 45
+000C0Ar 1  A9 03        	lda     #$03
+000C0Cr 1  8D 15 D0     	sta     $D015
+000C0Fr 1               	.dbg	line, "space-blimp.c", 46
+000C0Fr 1  A9 FF        	lda     #$FF
+000C11r 1  8D 1C D0     	sta     $D01C
+000C14r 1               	.dbg	line, "space-blimp.c", 48
+000C14r 1  A9 02        	lda     #$02
+000C16r 1  8D 25 D0     	sta     $D025
+000C19r 1               	.dbg	line, "space-blimp.c", 49
+000C19r 1  A9 01        	lda     #$01
+000C1Br 1  8D 26 D0     	sta     $D026
+000C1Er 1               	.dbg	line, "space-blimp.c", 51
+000C1Er 1  A9 0B        	lda     #$0B
+000C20r 1  8D 27 D0     	sta     $D027
+000C23r 1               	.dbg	line, "space-blimp.c", 52
+000C23r 1  8D 28 D0     	sta     $D028
+000C26r 1               	.dbg	line, "space-blimp.c", 54
+000C26r 1  A9 rr        	lda     #<(S0002)
+000C28r 1  A2 rr        	ldx     #>(S0002)
+000C2Ar 1  20 rr rr     	jsr     pushax
+000C2Dr 1  A0 02        	ldy     #$02
+000C2Fr 1  20 rr rr     	jsr     _printf
+000C32r 1               	.dbg	line, "space-blimp.c", 56
+000C32r 1  A9 00        	lda     #$00
+000C34r 1  8D rr rr     	sta     _x_counter+1
+000C37r 1               	.dbg	line, "space-blimp.c", 57
+000C37r 1  AA           	tax
+000C38r 1  8D rr rr     	sta     _y_counter+1
+000C3Br 1               	.dbg	line, "space-blimp.c", 59
+000C3Br 1  20 rr rr     	jsr     _init_mobs
+000C3Er 1               	.dbg	line, "space-blimp.c", 60
+000C3Er 1  20 rr rr     	jsr     _draw_mobs
+000C41r 1               	.dbg	line, "space-blimp.c", 63
+000C41r 1  A9 7F        	lda     #$7F
+000C43r 1  8D 0D DC     	sta     $DC0D
+000C46r 1               	.dbg	line, "space-blimp.c", 64
+000C46r 1  AD 11 D0     	lda     $D011
+000C49r 1  29 7F        	and     #$7F
+000C4Br 1  8D 11 D0     	sta     $D011
+000C4Er 1               	.dbg	line, "space-blimp.c", 65
+000C4Er 1  A9 01        	lda     #$01
+000C50r 1  8D 1A D0     	sta     $D01A
+000C53r 1               	.dbg	line, "space-blimp.c", 66
+000C53r 1  A9 E7        	lda     #$E7
+000C55r 1  8D 12 D0     	sta     $D012
+000C58r 1               	.dbg	line, "space-blimp.c", 68
+000C58r 1  20 rr rr     	jsr     decsp4
+000C5Br 1  A9 rr        	lda     #<(_do_IRQ)
+000C5Dr 1  A0 02        	ldy     #$02
+000C5Fr 1  91 rr        	sta     (sp),y
+000C61r 1  C8           	iny
+000C62r 1  A9 rr        	lda     #>(_do_IRQ)
+000C64r 1  91 rr        	sta     (sp),y
+000C66r 1  A9 rr        	lda     #<(_irq_stack)
+000C68r 1  A0 00        	ldy     #$00
+000C6Ar 1  91 rr        	sta     (sp),y
+000C6Cr 1  C8           	iny
+000C6Dr 1  A9 rr        	lda     #>(_irq_stack)
+000C6Fr 1  91 rr        	sta     (sp),y
+000C71r 1  A2 00        	ldx     #$00
+000C73r 1  A9 40        	lda     #$40
+000C75r 1  20 rr rr     	jsr     _set_irq
+000C78r 1               	.dbg	line, "space-blimp.c", 71
+000C78r 1  20 rr rr     L0002:	jsr     _kbhit
+000C7Br 1  AA           	tax
+000C7Cr 1  F0 FA        	beq     L0002
+000C7Er 1  20 rr rr     	jsr     _cgetc
+000C81r 1  C9 20        	cmp     #$20
+000C83r 1  D0 F3        	bne     L0002
+000C85r 1               	.dbg	line, "space-blimp.c", 72
+000C85r 1  A9 rr        	lda     #<(S0003)
+000C87r 1  A2 rr        	ldx     #>(S0003)
+000C89r 1  20 rr rr     	jsr     pushax
+000C8Cr 1  A0 02        	ldy     #$02
+000C8Er 1  20 rr rr     	jsr     _printf
+000C91r 1               	.dbg	line, "space-blimp.c", 73
+000C91r 1  A9 01        	lda     #$01
+000C93r 1  8D rr rr     	sta     _mobs+35
+000C96r 1               	.dbg	line, "space-blimp.c", 75
+000C96r 1  A9 rr        	lda     #>(_bomb_border_collision_handler)
+000C98r 1  8D rr rr     	sta     _mobs+40+1
+000C9Br 1  A9 rr        	lda     #<(_bomb_border_collision_handler)
+000C9Dr 1  8D rr rr     	sta     _mobs+40
+000CA0r 1               	.dbg	line, "space-blimp.c", 70
+000CA0r 1  4C rr rr     	jmp     L0002
+000CA3r 1               
+000CA3r 1               	.dbg	line
+000CA3r 1               .endproc
+000CA3r 1               
+000CA3r 1               ; ---------------------------------------------------------------
+000CA3r 1               ; void __near__ set_bit (unsigned char *val, unsigned char bit_num, unsigned char bit_val)
+000CA3r 1               ; ---------------------------------------------------------------
+000CA3r 1               
+000CA3r 1               .segment	"CODE"
+000CA3r 1               
+000CA3r 1               .proc	_set_bit: near
+000CA3r 1               
+000CA3r 1               	.dbg	func, "set_bit", "00", extern, "_set_bit"
+000CA3r 1               	.dbg	sym, "val", "00", auto, 2
+000CA3r 1               	.dbg	sym, "bit_num", "00", auto, 1
+000CA3r 1               	.dbg	sym, "bit_val", "00", auto, 0
+000CA3r 1               	.dbg	sym, "pwr2", "00", auto, -1
+000CA3r 1               
+000CA3r 1               .segment	"CODE"
+000CA3r 1               
+000CA3r 1               	.dbg	line, "space-blimp.c", 206
+000CA3r 1  20 rr rr     	jsr     pusha
+000CA6r 1               	.dbg	line, "space-blimp.c", 207
+000CA6r 1  A0 01        	ldy     #$01
+000CA8r 1  B1 rr        	lda     (sp),y
+000CAAr 1  A8           	tay
+000CABr 1  B9 rr rr     	lda     _pow2,y
+000CAEr 1  20 rr rr     	jsr     pusha
+000CB1r 1               	.dbg	line, "space-blimp.c", 209
+000CB1r 1  A0 02        	ldy     #$02
+000CB3r 1  B1 rr        	lda     (sp),y
+000CB5r 1  C9 09        	cmp     #$09
+000CB7r 1  90 0E        	bcc     L0004
+000CB9r 1  A9 rr        	lda     #<(S0006)
+000CBBr 1  A2 rr        	ldx     #>(S0006)
+000CBDr 1  20 rr rr     	jsr     pushax
+000CC0r 1  A2 00        	ldx     #$00
+000CC2r 1  A9 D1        	lda     #$D1
+000CC4r 1  20 rr rr     	jsr     __afailed
+000CC7r 1               	.dbg	line, "space-blimp.c", 211
+000CC7r 1  A0 01        L0004:	ldy     #$01
+000CC9r 1  B1 rr        	lda     (sp),y
+000CCBr 1  F0 1D        	beq     L0005
+000CCDr 1               	.dbg	line, "space-blimp.c", 212
+000CCDr 1  A0 04        	ldy     #$04
+000CCFr 1  B1 rr        	lda     (sp),y
+000CD1r 1  AA           	tax
+000CD2r 1  88           	dey
+000CD3r 1  B1 rr        	lda     (sp),y
+000CD5r 1  85 rr        	sta     sreg
+000CD7r 1  86 rr        	stx     sreg+1
+000CD9r 1  85 rr        	sta     ptr1
+000CDBr 1  86 rr        	stx     ptr1+1
+000CDDr 1  A0 00        	ldy     #$00
+000CDFr 1  B1 rr        	lda     (ptr1),y
+000CE1r 1  85 rr        	sta     ptr1
+000CE3r 1  B1 rr        	lda     (sp),y
+000CE5r 1  05 rr        	ora     ptr1
+000CE7r 1               	.dbg	line, "space-blimp.c", 214
+000CE7r 1  4C rr rr     	jmp     L0009
+000CEAr 1               	.dbg	line, "space-blimp.c", 215
+000CEAr 1  A0 04        L0005:	ldy     #$04
+000CECr 1  B1 rr        	lda     (sp),y
+000CEEr 1  AA           	tax
+000CEFr 1  88           	dey
+000CF0r 1  B1 rr        	lda     (sp),y
+000CF2r 1  85 rr        	sta     sreg
+000CF4r 1  86 rr        	stx     sreg+1
+000CF6r 1  85 rr        	sta     ptr1
+000CF8r 1  86 rr        	stx     ptr1+1
+000CFAr 1  A0 00        	ldy     #$00
+000CFCr 1  B1 rr        	lda     (ptr1),y
+000CFEr 1  85 rr        	sta     ptr1
+000D00r 1  A9 FF        	lda     #$FF
+000D02r 1  38           	sec
+000D03r 1  F1 rr        	sbc     (sp),y
+000D05r 1  25 rr        	and     ptr1
+000D07r 1  91 rr        L0009:	sta     (sreg),y
+000D09r 1               	.dbg	line, "space-blimp.c", 217
+000D09r 1  4C rr rr     	jmp     incsp5
+000D0Cr 1               
+000D0Cr 1               	.dbg	line
+000D0Cr 1               .endproc
+000D0Cr 1               
+000D0Cr 1               ; ---------------------------------------------------------------
+000D0Cr 1               ; void __near__ clr_screen (void)
+000D0Cr 1               ; ---------------------------------------------------------------
+000D0Cr 1               
+000D0Cr 1               .segment	"CODE"
+000D0Cr 1               
+000D0Cr 1               .proc	_clr_screen: near
+000D0Cr 1               
+000D0Cr 1               	.dbg	func, "clr_screen", "00", extern, "_clr_screen"
+000D0Cr 1               
+000D0Cr 1               .segment	"CODE"
+000D0Cr 1               
+000D0Cr 1               	.dbg	line, "space-blimp.c", 275
+000D0Cr 1  4C 44 E5     	jmp     $E544
+000D0Fr 1               
+000D0Fr 1               	.dbg	line
+000D0Fr 1               .endproc
+000D0Fr 1               
+000D0Fr 1               

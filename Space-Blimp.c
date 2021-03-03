@@ -60,7 +60,11 @@ int main(int argc, char **argv)
 	draw_mobs();
 
 	//run do_IRQ() to run every time the electron gun hits the blanking interval
+	CIA1.icr = 0x7f;	//(DC0D)disable CIA interrupts
+	VIC.ctrl1 &= 0b01111111;
+	VIC.imr = 1; //IRQ mask register, 1=interrupt enabled
 	VIC.rasterline=Y_MAX+1;	
+	
 	set_irq(do_IRQ,irq_stack,sizeof(irq_stack));
 
 	while (true) {
@@ -94,6 +98,7 @@ byte handle_sprites() {
 byte do_IRQ() {
 	byte old_color;
 	
+	VIC.irr = 1;
 	old_color = VIC.bordercolor;
 	VIC.bordercolor = COLOR_WHITE;
 	
@@ -102,6 +107,8 @@ byte do_IRQ() {
 	
 	VIC.bordercolor = old_color;
 	
+	//VIC.rasterline=Y_MAX+1;	
+
 	return IRQ_NOT_HANDLED;
 }
 
