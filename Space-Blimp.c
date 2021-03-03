@@ -5,6 +5,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <6502.h>
+#include <joystick.h>
+#include <conio.h>
 
 #include "space-blimp.h"
 
@@ -15,8 +18,8 @@ char *sprite_data_vicptr=(char *)2040;
 char *screen = (char *)0x400;
 
 byte pow2[]={1,2,4,8,16,32,64,128};
-byte blimp_ptrs[2] = {193,195};
-byte bomb_ptrs[2] = {192,194};
+byte blimp_spr_ptrs[2] = {R_BLIMP_SPR,L_BLIMP_SPR};
+byte bomb_spr_ptrs[2] = {R_BOMB_SPR,L_BOMB_SPR};
 
 byte blimp_ptr_len = 2;
 byte bomb_ptr_len = 2;
@@ -24,37 +27,21 @@ byte bomb_ptr_len = 2;
 Move_Counter x_counter, y_counter;
 
 char *fn  = "sprites.prg";
-char *fn2 = "sprites";
+//char *fn2 = "sprites";
+
+byte irq_stack[64];
 
 int main(int argc, char **argv)
 {
-	int ret_code, ret_code2;
-	byte dev;
 	byte t=0;
 	
-	clr_screen();
+	clrscr();	//clear screen
+	VIC.bgcolor0 = COLOR_BLACK;
+	VIC.bordercolor = COLOR_BLACK;
+
+	handle_sprites();
 		
-	//
-	// sprite filename might depend on whether we're running on a real machine
-	//	or an emulator, so try 'sprites.prg' first, then 'sprites'
-	//
-	dev = get_device_num();
-	ret_code=load_sprites(fn, dev);
-	
-	if (ret_code != 0) {
-		printf("Failed to load '%s' with error code %d.\n Trying alternate filename '%s'...\n",
-			fn, ret_code, fn2);
-		ret_code2 = load_sprites(fn2,dev);
 		
-		if (ret_code2 != 0) {
-			printf("Sprite load failed with code %d\n", ret_code);
-			exit(ret_code); 
-		}
-	}
-	else {
-		printf("sprites loaded!\n");
-	}
-	
 	VIC.spr_ena = 3; //SPRITE_0_MASK | SPRITE_1_MASK;
 	VIC.spr_mcolor = 255;
 
@@ -71,73 +58,57 @@ int main(int argc, char **argv)
 	
 	init_mobs();
 	draw_mobs();
-	
-	//while (true) {};
-	
+
+	//run do_IRQ() to run every time the electron gun hits the blanking interval
+	VIC.rasterline=Y_MAX+1;	
+	set_irq(do_IRQ,irq_stack,sizeof(irq_stack));
 
 	while (true) {
-
-		//TODO replace with an IRQ for rasterline 251
-		while (VIC.rasterline<251) {};	//wait for raster to go off screen
+		if (kbhit() && cgetc() == ' ') {
+			printf("FIRE AWAY!\n");
+			mobs[BOMB_MOB].yvel = 1;
+			//mobs[BOMB_MOB].xvel = 0;
+			mobs[BOMB_MOB].coll_handler = bomb_border_collision_handler;
+		}			
 		
-		//clr_screen();
-		move_mobs();
-		draw_mobs();
-		
-/*		
-		
-		 VIC.spr_pos[0].y = 50;
-		 VIC.spr_pos[1].y = 50;
-		 
-		// right-pointing sprites
-		sprite_data_vicptr[0]=193;
-		sprite_data_vicptr[1]=192;
-	
-		for (i=16;i<319;i++) {
-			while (VIC.rasterline<251) {};	//wait for raster to go off screen
-			set_sprite_x(0,i);
-			set_sprite_x(1,i);
-			while (VIC.rasterline<250) {};	//wait for raster to go off screen
-		}
-
-		// left-pointing sprites		
-		sprite_data_vicptr[0]=194;
-		sprite_data_vicptr[1]=195;
-		
-		for (i=319;i>=16;i--) {
-			while (VIC.rasterline<251) {};	//wait for raster to go off screen
-			set_sprite_x(0,i);
-			set_sprite_x(1,i);
-			while (VIC.rasterline<250) {};	//wait for raster to go off screen
-		}
-
-		// right-pointing sprites
-		sprite_data_vicptr[0]=193;
-		sprite_data_vicptr[1]=192;
-
-		for (i=16;i<170;i++) {
-			while (VIC.rasterline<251) {};	//wait for raster to go off screen
-			set_sprite_x(0,i);
-			set_sprite_x(1,i);
-			while (VIC.rasterline<250) {};	//wait for raster to go off screen
-		}
-
-		//drop the bomb
-		for (i=50; i<250;i++) {
-			while (VIC.rasterline>0) {};	//wait for raster to go off screen
-			VIC.spr_pos[1].y=i;
-			while (VIC.rasterline<250) {};	//wait for raster to go off screen
-		}
-*/	
 	}
 	
 	return 0;
 }
 
+byte handle_sprites() {
+	byte dev;
+	byte ret_code = 0;
+	
+	dev = get_device_num();
+	ret_code=load_sprites(fn, dev);
+	if (ret_code != 0) {
+		printf("Sprite load failed with code %d\n", ret_code);
+		exit(ret_code); 
+	}
+	else {
+		printf("Sprites loaded!\n");
+	}	
+}
+
+byte do_IRQ() {
+	byte old_color;
+	
+	old_color = VIC.bordercolor;
+	VIC.bordercolor = COLOR_WHITE;
+	
+	move_mobs();
+	draw_mobs();
+	
+	VIC.bordercolor = old_color;
+	
+	return IRQ_NOT_HANDLED;
+}
+
 byte get_device_num() {
 	int d;
 	
-		// read last used device number
+	// read last used device number
 	d = *((byte*)0xba);
 	if (d < 8 || d > 31) {
 		d = 8;
@@ -173,20 +144,20 @@ void init_mobs() {
 	
 	//int i;
 	
-	// printf("blimp_ptrs:");
+	// printf("blimp_spr_ptrs:");
 	// for (i=0;i<2;i++) {
-		// printf("%d=%d ",i,blimp_ptrs[i]);
+		// printf("%d=%d ",i,blimp_spr_ptrs[i]);
 	// }
 	// printf("\n");
 	
 	//blimp
-	init_MOB(0, true, 0, true, blimp_ptrs,blimp_ptr_len,
-		16, false, 50, false, 2,0,COLOR_GRAY1,
+	init_MOB(0, true, 0, true, blimp_spr_ptrs,blimp_ptr_len,
+		X_MIN, false, Y_MIN, false, 2,0,COLOR_GRAY1,
 		&x_counter, &y_counter,
 		sprite_switching_bouncy_border_collision_handler, velocity_movement_handler);
 	//bomb
-	init_MOB(1, true, 1, true, bomb_ptrs,bomb_ptr_len,
-		16, false, 50, false, 2,0,COLOR_GRAY1,
+	init_MOB(1, true, 1, true, bomb_spr_ptrs,bomb_ptr_len,
+		X_MIN, false, Y_MIN, false, 2,0,COLOR_GRAY1,
 		&x_counter, &y_counter,
 		sprite_switching_bouncy_border_collision_handler, velocity_movement_handler);
 
@@ -216,6 +187,10 @@ MOB  *init_MOB(byte num, bool active, byte sprite_num, bool mcolor,
 		m->coll_handler = coll_handler;
 		m->move_handler = move_handler;
 		
+		set_sprite(m, sprite_num);
+		
+		sprite_data_vicptr[m->sprite_num]=m->sprite_ptrs[m->sprite_ptr_num];
+		
 		return m;
 	}
 
@@ -233,6 +208,7 @@ void set_bit(byte *val, byte bit_num, bool bit_val) {
 		*val &= (0xFF - pwr2);
 	}
 }
+
 void draw_mobs() {
 	byte i;
 	
@@ -246,21 +222,24 @@ void draw_mob(MOB *m) {
 	if (m->active == true) {
 		byte n = m->sprite_num;
 		
-		set_bit(&VIC.spr_ena,n,m->active);
 		
 		VIC.spr_pos[n].y = m->y;
 		set_sprite_x(n,m->x);
 		
-		sprite_data_vicptr[n]=m->sprite_ptrs[m->sprite_ptr_num];
 		
-		set_bit(&VIC.spr_exp_x,n,m->expand_x);
-		set_bit(&VIC.spr_exp_y,n,m->expand_y);
 	}
 	else {
 		DPRINT("sprite %d is inactive!\n",m->sprite_num);
 	}
 }
 
+set_sprite(MOB *m, byte sprite_num) {
+	m->sprite_num = sprite_num;
+	set_bit(&VIC.spr_ena,sprite_num,true);
+	//set_bit(&VIC.spr_exp_x,n,m->expand_x);
+	//set_bit(&VIC.spr_exp_y,n,m->expand_y);
+	
+}
 
 void dump_mob(MOB *m) {
 	byte sn;
@@ -290,8 +269,7 @@ void clr_screen() {
 }
 
 void bouncy_border_collision_handler(MOB *m, CollisionType type) {
-	assert(m != NULL);
-	
+	assert(m != NULL);	
 	
 	switch(type) {
 		case CT_LEFT: {
@@ -317,10 +295,70 @@ void bouncy_border_collision_handler(MOB *m, CollisionType type) {
 	}
 }
 
+void sprite_switching_bouncy_border_collision_handler(MOB *m, CollisionType type) {
+	assert(m != NULL && type != NULL);
+	
+	bouncy_border_collision_handler(m, type);
+	if (type == CT_LEFT) {
+		prev_sprite_ptr(m);
+	}
+	else if (type == CT_RIGHT) {
+		next_sprite_ptr(m);
+	}
+}	
+
+void bomb_border_collision_handler(MOB *m, CollisionType type) {
+	
+	assert(m != NULL);
+	
+	assert (type != CT_TOP); 	//if this happens we have a problem somewhere - the bomb should only fall DOWN!
+	
+	switch (type){
+		case CT_LEFT: {
+			//printf("CT_LEFT\n");
+			mobs[BOMB_MOB].x = X_MAX;	//wrap around
+			break;
+		}
+		case CT_RIGHT: {
+			//printf("CT_RIGHT\n");
+			//reset_bomb();
+			mobs[BOMB_MOB].x = X_MIN;	//wrap around
+			break;
+		}
+		case CT_BOTTOM: {
+			//TODO did we hit a city? If so, BOOOOM!!
+			reset_bomb();
+			break;
+		}
+		default: {
+			break;	//maybe we should throw some kind of exception here?
+		}
+	}
+}
+
+void reset_bomb() {
+	MOB *m;
+
+	m = mobs+BOMB_MOB;
+	
+	m->yvel = 0;
+	m->xvel = mobs[BLIMP_MOB].xvel;
+	
+	m->x = mobs[BLIMP_MOB].x;
+	m->y = mobs[BLIMP_MOB].y;
+	
+	m->sprite_ptr_num = mobs[BLIMP_MOB].sprite_ptr_num;
+	m->coll_handler = sprite_switching_bouncy_border_collision_handler;
+}
+
+
 void velocity_movement_handler(MOB *m) {
 	CollisionType ct=CT_NONE;
 
 	assert(m != NULL);
+	
+	//printf("v_m_h()\n");
+	
 	
 
 	// Move the MOB (60 / sprite_move_interval) times/sec
@@ -349,30 +387,21 @@ void velocity_movement_handler(MOB *m) {
 		
 	assert(m->coll_handler != NULL);
 	if ((ct != CT_NONE) ) {
+		//printf("calling collision handler...\n");
 		m->coll_handler(m, ct);
 	}
 }
-
-void sprite_switching_bouncy_border_collision_handler(MOB *m, CollisionType type) {
-	assert(m != NULL && type != NULL);
-	
-	bouncy_border_collision_handler(m, type);
-	if (type == CT_LEFT) {
-		prev_sprite_ptr(m);
-	}
-	else if (type == CT_RIGHT) {
-		next_sprite_ptr(m);
-	}
-}	
-
-
    
 void next_sprite_ptr(MOB *m) {
 	m->sprite_ptr_num = (m->sprite_ptr_num +(byte)1) % (m->sprite_ptrs_len);
+	sprite_data_vicptr[m->sprite_num]=m->sprite_ptrs[m->sprite_ptr_num];
+
 }
 
 void prev_sprite_ptr(MOB *m) {
-	m->sprite_ptr_num = (m->sprite_ptr_num -(byte)1) % (m->sprite_ptrs_len);	
+	m->sprite_ptr_num = (m->sprite_ptr_num -(byte)1) % (m->sprite_ptrs_len);
+	sprite_data_vicptr[m->sprite_num]=m->sprite_ptrs[m->sprite_ptr_num];
+	
 }
 
 

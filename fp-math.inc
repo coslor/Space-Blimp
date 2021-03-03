@@ -1,9 +1,18 @@
+;
+;	Floating Point Math Constants
+;
+;	Mostly from the BASIC ROMs--this stuff wont work if
+;	the BASIC ROM is turned off!
+;
+
+FAC1=$61			; 6-byte floating point accumulator #1 
+FAC2=$69			; 6-byte floating point accumulator #2 
+
 STROUT=$ab1e		; print string beginning in A/Y, terminated by zero
 PRTSPC=$ab3f		; print a space
 OUTDO=$AB47			; print the char in A
 GIVAYF=$b391		; convert 2-byte int in Y/A to FP in FAC1
 SNGET=$b3a2			; convert 1-byte int in Y to FP in FAC1
-GARBA2=$b526		; do garbage collection
 FSUBT=$b853			; FAC1=FAC2-FAC1
 FADDT=$b86f			; FAC1+=FAC2
 COMPLT=$b947		; FAC1=twos_complement(FAC1)

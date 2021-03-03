@@ -13,7 +13,7 @@ CC      = $(CC65_HOME)\bin\cl65.exe
 ##CFLAGS  = -t $(CC65_TARGET) --create-dep -O
 ##LDFLAGS = -t $(CC65_TARGET) -m $(PROGRAM).map -g -Ln $(PROGRAM).vs
 #CFLAGS   =  -Wl --dbgfile,$(PROGRAM).dbg -vm -l $(PROGRAM).lst -t $(CC65_TARGET) -Ln $(PROGRAM).vs -m $(PROGRAM).map -g 
-CFLAGS  = -t $(CC65_TARGET) --create-dep $(<:.c=.d) -O -Wl --dbgfile,$(PROGRAM).dbg -vm -l $(PROGRAM).lst -t $(CC65_TARGET) -Ln $(PROGRAM).vs -m $(PROGRAM).map -g 
+CFLAGS  = -t $(CC65_TARGET) --create-dep $(<:.c=.d)  -Wl --dbgfile,$(PROGRAM).dbg -vm -l $(PROGRAM).lst -t $(CC65_TARGET) -Ln $(PROGRAM).vs -m $(PROGRAM).map -g -Oi
 LDFLAGS = -t $(CC65_TARGET) -m $(PROGRAM).map
 RM = del
 
@@ -21,7 +21,8 @@ RM = del
 .SUFFIXES:
 .PHONY: all clean
 
-all: $(PROGRAM)
+#all: $(PROGRAM)
+all: blimp-disk.d64
 
 #$(PROGRAM):	$(SOURCES)
 #	$(CC) $(CFLAGS) -O -o $(PROGRAM) $(SOURCES)
