@@ -7,3 +7,13 @@
 interrupt-test
 interrupt-test2
 Space-Blimp.lst
+Space-Blimp.lst
+sb mc chars-charset.prg
+sb mc chars.old
+space blimp mc chars-charset.s
+space blimp mc chars-colors.prg
+space blimp mc chars-colors.s
+space blimp mc chars-map.prg
+space blimp mc chars-map.s
+Space-Blimp.lst
+Space-Blimp.lst

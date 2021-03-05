@@ -49,7 +49,7 @@ blimp-disk.d64:	$(PROGRAM)
 #	$(1541) -attach blimp-disk.d64 -format $(PROGRAM),bd -write $(PROGRAM) -write sprites.prg -list
 #	$(1541) -format "$(PROGRAM),xx" d64 $(PROGRAM).d64
 #	$(1541) -attach $(PROGRAM).d64 -delete $(PROGRAM) -write $(PROGRAM) -dir
-	$(1541) -format "blimp-disk,xx" d64 blimp-disk.d64 -attach blimp-disk.d64 -write $(PROGRAM) -write sprites.prg -list	
+	$(1541) -format "blimp-disk,xx" d64 blimp-disk.d64 -attach blimp-disk.d64 -write $(PROGRAM) -write sprites.prg -write "sb mc chars.prg" -list	
 	
 clean:
 #	$(RM) $(SOURCES:.c=.o) $(SOURCES:.c=.d) $(PROGRAM) $(PROGRAM).map $(PROGRAM).vs blimp-disk.d64

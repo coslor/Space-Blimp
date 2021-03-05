@@ -26,15 +26,24 @@
 #define BLIMP_MOB 0
 
 
-//#define DEBUG
+#define DEBUG
 
 #ifdef DEBUG
 	#define DPRINT(arg1,arg2) printf("%s(%d):%s=%d\n",__FILE__,__LINE__,arg1,arg2);
 #else
-	#define DPRINT(arg1,arg2) //arg1,arg2 ;
+	#define DPRINT(arg1,arg2) 
 #endif
 
-#define SET_BIT(value,bit_num,bit_val) if (bit_val) {value |= 1<<bit_num;} else {value &= (0xFF - (1<<bit_num));};
+#ifdef DEBUG
+	#define START_TIMER(color) 	byte old_color; old_color = VIC.bordercolor; VIC.bordercolor=color;
+	#define STOP_TIMER() 		VIC.bordercolor=old_color;
+#else
+	#define START_TIMER(color) ;
+	#define STOP_TIMER() ;
+#endif
+
+
+#define SET_BIT(value,bit_num,bit_val) if (bit_val) {*value |= 1<<bit_num;} else {*value &= (0xFF - (1<<bit_num));};
 
 //#define DPRINT(string,arg1,arg2,arg3,arg4) { ##ifdef DEBUG printf(##string,##arg1,##arg2,##arg3,##arg4); ##endif }
 
@@ -46,8 +55,8 @@ typedef int8_t sbyte;
 typedef uint16_t word;
 
 typedef struct MOB MOB;
-typedef void (*CollisionHandler)(MOB*, CollisionType);
-typedef void (*MovementHandler)(MOB* mob);
+typedef void (*CollisionHandler)(byte, CollisionType);
+typedef void (*MovementHandler)(byte);
 
 
 
@@ -91,14 +100,13 @@ typedef struct MOB {
 typedef enum {CT_NONE,CT_RIGHT, CT_TOP, CT_LEFT, CT_BOTTOM} CollisionType;
 
 byte get_device_num();
-void set_sprite_x(byte, int);
 extern byte fastcall loadbin(char* filename, byte fname_len, byte device, unsigned int address);
 //void clr_screen();
 
-byte handle_sprites();
+//byte handle_sprites();
 
 //typedef void handle_collision(MOB mob, border_collision_type ct) CollisionHandler;
-MOB *init_MOB(byte num, bool active, byte sprite_num, bool mcolor, 						\
+void init_MOB(byte num, bool active, byte sprite_num, bool mcolor, 						\
 	byte* sprite_ptrs, byte sprite_ptrs_len,											\
 	word x, bool expand_x, byte y, bool expand_y, sbyte xvel, sbyte yvel, byte color,	\
 	Move_Counter *x_counter, Move_Counter *y_counter, 									\
@@ -107,29 +115,43 @@ MOB *init_MOB(byte num, bool active, byte sprite_num, bool mcolor, 						\
 void move_mobs();
 
 // collision handlers
-void sprite_switching_bouncy_border_collision_handler(struct MOB*, CollisionType);
-void bouncy_border_collision_handler(MOB*, CollisionType);
-void sprite_switching_bouncy_border_collision_handler(MOB*, CollisionType);
-void bomb_border_collision_handler(MOB*, CollisionType);
+void sprite_switching_bouncy_border_collision_handler(byte, CollisionType);
+void bouncy_border_collision_handler(byte, CollisionType);
+void sprite_switching_bouncy_border_collision_handler(byte, CollisionType);
+void bomb_border_collision_handler(byte, CollisionType);
 
 //movement handlers
-void velocity_movement_handler(MOB*);
+void velocity_movement_handler(byte);
 
-void handle_border_collision(MOB*, CollisionType);
+void handle_border_collision(byte, CollisionType);
 
-int load_sprites(char *, byte);
+byte load_sprites();
+byte load_chars();
+
+void set_video_charset_addresses(word screen_addr,word charset_addr);
+
 void init_mobs();
 //void set_bit(byte *, byte, bool);
-void move_mob(MOB*);
+void move_mob(byte);
 void move_mobs();
 void draw_mobs();
-void dump_mob(MOB*);
-void draw_mob(MOB*);
+void dump_mob(byte);
+void draw_mob(byte);
 
-void next_sprite_ptr(MOB *);
-void prev_sprite_ptr(MOB *);
+void next_sprite_ptr(byte);
+void prev_sprite_ptr(byte);
 
 byte do_IRQ();
 void reset_bomb();
 
-set_sprite(MOB *, byte);
+void set_sprite(byte, byte);
+
+
+typedef struct params_set_sprite_x {
+	byte sprite_num;
+	int x_pos;
+} params_set_sprite_x;
+//void set_sprite_x(byte, int);
+void set_sprite_x(params_set_sprite_x *);
+
+void draw_city(byte start_row,start_col);

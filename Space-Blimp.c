@@ -26,10 +26,13 @@ byte bomb_ptr_len = 2;
 
 Move_Counter x_counter, y_counter;
 
-char *fn  = "sprites.prg";
+char *sprite_fn  = "sprites.prg";
+char *char_fn = "sb mc chars.prg";
 //char *fn2 = "sprites";
 
 byte irq_stack[64];
+
+params_set_sprite_x	set_sprite_x_params;
 
 int main(int argc, char **argv)
 {
@@ -39,9 +42,7 @@ int main(int argc, char **argv)
 	VIC.bgcolor0 = COLOR_BLACK;
 	VIC.bordercolor = COLOR_BLACK;
 
-	handle_sprites();
-		
-		
+	load_sprites();
 	VIC.spr_ena = 3; //SPRITE_0_MASK | SPRITE_1_MASK;
 	VIC.spr_mcolor = 255;
 
@@ -50,6 +51,13 @@ int main(int argc, char **argv)
 	
 	VIC.spr_color[0] = COLOR_GRAY1;
 	VIC.spr_color[1] = COLOR_GRAY1;
+	
+	load_chars();
+	set_video_charset_addresses(0x0400,0x3800);
+	*((byte *)53270) |= 0b00010000;		//enable mcolor
+	VIC.bgcolor[1] = COLOR_GRAY1;
+	VIC.bgcolor[2] = COLOR_GRAY2;
+	
 	
 	printf("Space Blimp, motha motha!!!\n");
 
@@ -63,31 +71,56 @@ int main(int argc, char **argv)
 	CIA1.icr = 0x7f;	//(DC0D)disable CIA interrupts
 	VIC.ctrl1 &= 0b01111111;
 	VIC.imr = 1; //IRQ mask register, 1=interrupt enabled
-	VIC.rasterline=Y_MAX+1;	
+	VIC.rasterline=255;	
 	
 	set_irq(do_IRQ,irq_stack,sizeof(irq_stack));
 
+	draw_city(22,17);
+	
 	while (true) {
 		if (kbhit() && cgetc() == ' ') {
 			printf("FIRE AWAY!\n");
 			mobs[BOMB_MOB].yvel = 1;
 			//mobs[BOMB_MOB].xvel = 0;
 			mobs[BOMB_MOB].coll_handler = bomb_border_collision_handler;
-		}			
-		
+		}				
 	}
-	
 	return 0;
 }
 
-byte handle_sprites() {
+void draw_city(byte start_row,start_col) {
+	byte r,c;
+	word sr_offset,cr_offset,sc_offset,ch_offset;
+	byte *sp,*cp;
+	
+	for (r=0;r<3; r++) {
+		sr_offset = 40*(start_row + r);
+		cr_offset = 6*r;
+		
+		for (c=0;c<6;c++) {
+			sc_offset = sr_offset + start_col + c;
+			ch_offset = cr_offset + c;
+			
+			sp=(byte *)(0x0400 + sc_offset);
+			*sp=129 + ch_offset;
+			cp=(byte *)(COLOR_RAM + sc_offset);
+			*cp=9;
+			
+		}	//for c
+	}	//for r
+}	//draw_city
+
+
+//TODO get rid of loadbin() and use cbm_load() instead
+byte load_sprites() {
 	byte dev;
 	byte ret_code = 0;
 	
 	dev = get_device_num();
-	ret_code=load_sprites(fn, dev);
+	ret_code=loadbin(sprite_fn,(byte)strlen(sprite_fn),dev,0x3000);
+	
 	if (ret_code != 0) {
-		printf("Sprite load failed with code %d\n", ret_code);
+		printf("Sprite load %s failed:code %d\n", sprite_fn, ret_code);
 		exit(ret_code); 
 	}
 	else {
@@ -95,20 +128,41 @@ byte handle_sprites() {
 	}	
 }
 
+//TODO get rid of loadbin() and use cbm_load() instead
+byte load_chars() {
+	byte dev;
+	byte ret_code = 0;
+	
+	dev = get_device_num();
+	ret_code=loadbin(char_fn,(byte)strlen(char_fn),dev,0x3800);
+	
+	if (ret_code != 0) {
+		printf("Char load %s failed: code %d\n", char_fn, ret_code);
+		exit(ret_code); 
+	}
+	else {
+		printf("Chars loaded!\n");
+	}	
+}
+
+void set_video_charset_addresses(word screen_addr,word charset_addr) {
+	word val;
+	
+	val = ((screen_addr >> 10) <<4) | ((charset_addr >> 11)<<1);
+	VIC.addr = val;
+}
+
 byte do_IRQ() {
-	byte old_color;
+	START_TIMER(COLOR_WHITE);
 	
 	VIC.irr = 1;
-	old_color = VIC.bordercolor;
-	VIC.bordercolor = COLOR_WHITE;
 	
 	move_mobs();
 	draw_mobs();
 	
-	VIC.bordercolor = old_color;
 	
-	//VIC.rasterline=Y_MAX+1;	
-
+	STOP_TIMER();
+	
 	return IRQ_NOT_HANDLED;
 }
 
@@ -123,54 +177,51 @@ byte get_device_num() {
 	//printf("device=%d\n",dev);
 	return d;
 }
-int load_sprites(char* fn, byte dev) {
-	byte flen, ret_code;
+// int load_sprites(char* fn, byte dev) {
+	// byte flen, ret_code;
 	
-	flen=(byte)strlen(fn);
-	ret_code=loadbin(fn,flen,dev,0x3000);
-	//printf("loadbin returned with code %d\n",ret_code);
+	// flen=(byte)strlen(fn);
+	// ret_code=loadbin(fn,flen,dev,0x3000);
+	////printf("loadbin returned with code %d\n",ret_code);
 	
-	return ret_code;
-}
+	// return ret_code;
+// }
 
 void move_mobs() {
-	int i;
+	byte i;
+	MOB *m;
 	
-	for (i=0;i<8;i++) {
-		if (mobs[i].active == true) {
-			move_mob(mobs+i);
+	START_TIMER(COLOR_YELLOW);
+	
+	m=mobs;
+	for (i=0;i<NUM_MOBS;i++) {
+		
+		if (m->active) {
+			m->move_handler(i);		
 		}
+		++m;
 	}
+	STOP_TIMER();
 }
 
-void move_mob(MOB *m) {
-	m->move_handler(m);
-}
 
 void init_mobs() {
 	
-	//int i;
-	
-	// printf("blimp_spr_ptrs:");
-	// for (i=0;i<2;i++) {
-		// printf("%d=%d ",i,blimp_spr_ptrs[i]);
-	// }
-	// printf("\n");
-	
 	//blimp
-	init_MOB(0, true, 0, true, blimp_spr_ptrs,blimp_ptr_len,
-		X_MIN, false, Y_MIN, false, 2,0,COLOR_GRAY1,
+	init_MOB(BLIMP_MOB, true, 0, true, blimp_spr_ptrs,blimp_ptr_len,
+		X_MIN, false, Y_MIN, false, 1,0,COLOR_GRAY1,
 		&x_counter, &y_counter,
 		sprite_switching_bouncy_border_collision_handler, velocity_movement_handler);
+		
 	//bomb
-	init_MOB(1, true, 1, true, bomb_spr_ptrs,bomb_ptr_len,
-		X_MIN, false, Y_MIN, false, 2,0,COLOR_GRAY1,
+	init_MOB(BOMB_MOB, true, 1, true, bomb_spr_ptrs,bomb_ptr_len,
+		X_MIN, false, Y_MIN, false, 1,0,COLOR_GRAY1,
 		&x_counter, &y_counter,
 		sprite_switching_bouncy_border_collision_handler, velocity_movement_handler);
 
 }
 
-MOB  *init_MOB(byte num, bool active, byte sprite_num, bool mcolor, 
+void init_MOB(byte num, bool active, byte sprite_num, bool mcolor, 
 	byte* sprite_ptrs, byte sprite_ptrs_len, 
 	word x, bool expand_x, byte y, bool expand_y, sbyte xvel, sbyte yvel, byte color, 
 	Move_Counter *x_counter, Move_Counter *y_counter,
@@ -194,90 +245,97 @@ MOB  *init_MOB(byte num, bool active, byte sprite_num, bool mcolor,
 		m->coll_handler = coll_handler;
 		m->move_handler = move_handler;
 		
-		set_sprite(m, sprite_num);
+		set_sprite(num, sprite_num);
 		
 		sprite_data_vicptr[m->sprite_num]=m->sprite_ptrs[m->sprite_ptr_num];
 		
-		return m;
 	}
 
 	
 
 void set_bit(byte *val, byte bit_num, bool bit_val) {
-	byte pwr2 = pow2[bit_num];
+	byte pwr2;
+	START_TIMER(COLOR_PURPLE);
 	
-	assert(bit_num <= 8);
-	
+	pwr2 = 1<<bit_num;
+		
 	if (bit_val) {
 		*val |= pwr2;
 	}
 	else {
 		*val &= (0xFF - pwr2);
 	}
-}
+	STOP_TIMER()}
 
 void draw_mobs() {
-	byte i;
+	byte i, n;
+	MOB *m;
+	
+	START_TIMER(COLOR_GREEN);
 	
 	for (i=0; i < NUM_MOBS;i++) {
-		MOB *m = mobs+i;
-		draw_mob(m);
+		m = mobs+i;
+		if (m->active) {
+			n = m->sprite_num;
+			VIC.spr_pos[n].y = m->y;
+			
+			set_sprite_x_params.sprite_num=n;
+			set_sprite_x_params.x_pos=m->x;
+			set_sprite_x(&set_sprite_x_params);
+		}
 	}
-}
+	STOP_TIMER()}
 
-void draw_mob(MOB *m) {
-	if (m->active == true) {
-		byte n = m->sprite_num;
-		
-		
-		VIC.spr_pos[n].y = m->y;
-		set_sprite_x(n,m->x);
-		
-		
-	}
-	else {
-		DPRINT("sprite %d is inactive!\n",m->sprite_num);
-	}
-}
 
-set_sprite(MOB *m, byte sprite_num) {
+void set_sprite(byte mob_num, byte sprite_num) {
+	MOB *m;
+	
+	m=mobs+mob_num;
 	m->sprite_num = sprite_num;
-	set_bit(&VIC.spr_ena,sprite_num,true);
+	SET_BIT(&VIC.spr_ena,sprite_num,true);
 	//set_bit(&VIC.spr_exp_x,n,m->expand_x);
 	//set_bit(&VIC.spr_exp_y,n,m->expand_y);
-	
 }
 
-void dump_mob(MOB *m) {
+void dump_mob(byte mob_num) {
 	byte sn;
+	MOB *m;
 	
+	m-mobs+mob_num;
 	printf("MOB %p Active: %d \n", m, m->active);
 	printf("\tSprite %d Ptr:%d\n",m->sprite_num,m->sprite_ptrs[m->sprite_ptr_num]);
 	printf("\tLoc: %d,%d\n",m->x, m->y);
 	printf("\nSprite %d:\n",m->sprite_num);
 	sn = m->sprite_num;
-	printf("enabled:%d x:%d y:%d \n", (VIC.spr_ena & (2^sn)),
+	printf("enabled:%d x:%d y:%d \n", (VIC.spr_ena & (1<<sn)),
 		VIC.spr_pos[sn].x, VIC.spr_pos[sn].y);
 }
 
-void set_sprite_x(byte sprite_num, int x_pos) {
+//void set_sprite_x(byte sprite_num, int x_pos) {
+void set_sprite_x(params_set_sprite_x *params) {
 	byte high_byte;
 	
-	assert(sprite_num<=8);
+	START_TIMER(COLOR_LIGHTGREEN);
 	
-	VIC.spr_pos[sprite_num].x = (x_pos & 0xff);
+	VIC.spr_pos[params->sprite_num].x = params->x_pos;//(x_pos & 0xff);
 	
-	high_byte = x_pos / 256;
-	set_bit(&(VIC.spr_hi_x),sprite_num,(high_byte!=0));
+	high_byte = params->x_pos >> 8; //x_pos / 256
+	SET_BIT(&VIC.spr_hi_x,params->sprite_num,(high_byte!=0));
+	
+	STOP_TIMER();
 }
 
 void clr_screen() {
 	__asm__("jsr %w", CLR_SCRN);
 }
 
-void bouncy_border_collision_handler(MOB *m, CollisionType type) {
-	assert(m != NULL);	
+void bouncy_border_collision_handler(byte mob_num, CollisionType type) {
+//	assert(m != NULL);	
+	MOB *m;
 	
+	START_TIMER(COLOR_LIGHTRED);
+	m=mobs+mob_num;
+
 	switch(type) {
 		case CT_LEFT: {
 			m->x = X_MIN + 1;
@@ -300,36 +358,36 @@ void bouncy_border_collision_handler(MOB *m, CollisionType type) {
 			break;			
 		}
 	}
+	
+	STOP_TIMER();
 }
 
-void sprite_switching_bouncy_border_collision_handler(MOB *m, CollisionType type) {
-	assert(m != NULL && type != NULL);
+void sprite_switching_bouncy_border_collision_handler(byte mob_num, CollisionType type) {
+	START_TIMER(COLOR_BLUE);
 	
-	bouncy_border_collision_handler(m, type);
+	bouncy_border_collision_handler(mob_num, type);
 	if (type == CT_LEFT) {
-		prev_sprite_ptr(m);
+		prev_sprite_ptr(mob_num);
 	}
 	else if (type == CT_RIGHT) {
-		next_sprite_ptr(m);
+		next_sprite_ptr(mob_num);
 	}
+	STOP_TIMER();
 }	
 
-void bomb_border_collision_handler(MOB *m, CollisionType type) {
+void bomb_border_collision_handler(byte mob_num, CollisionType type) {
+	START_TIMER(COLOR_RED);
 	
-	assert(m != NULL);
-	
-	assert (type != CT_TOP); 	//if this happens we have a problem somewhere - the bomb should only fall DOWN!
+	//assert(m != NULL);	
+	//assert (type != CT_TOP); 	//if this happens we have a problem somewhere - the bomb should only fall DOWN!
 	
 	switch (type){
 		case CT_LEFT: {
-			//printf("CT_LEFT\n");
-			mobs[BOMB_MOB].x = X_MAX;	//wrap around
+			mobs[mob_num].x = X_MAX;	//wrap around
 			break;
 		}
 		case CT_RIGHT: {
-			//printf("CT_RIGHT\n");
-			//reset_bomb();
-			mobs[BOMB_MOB].x = X_MIN;	//wrap around
+			mobs[mob_num].x = X_MIN;	//wrap around
 			break;
 		}
 		case CT_BOTTOM: {
@@ -338,9 +396,12 @@ void bomb_border_collision_handler(MOB *m, CollisionType type) {
 			break;
 		}
 		default: {
-			break;	//maybe we should throw some kind of exception here?
+			//break;	//TODO we should log a message here somehow
+			VIC.bgcolor0=COLOR_RED;
+			exit(1);
 		}
 	}
+	STOP_TIMER();
 }
 
 void reset_bomb() {
@@ -359,16 +420,15 @@ void reset_bomb() {
 }
 
 
-void velocity_movement_handler(MOB *m) {
+void velocity_movement_handler(byte mob_num) {
 	CollisionType ct=CT_NONE;
+	MOB *m;
 
-	assert(m != NULL);
+	START_TIMER(COLOR_ORANGE);
 	
-	//printf("v_m_h()\n");
+	// Move the MOB ((60 for NTSC, 50 for PAL) / sprite_move_interval) times/sec
+	m=mobs+mob_num;
 	
-	
-
-	// Move the MOB (60 / sprite_move_interval) times/sec
 	//	Use sprite_move_interval to slow a sprite's movement.
 	if ((m->x_counter.sprite_move_timer--) == 0) {		
 		m->x += m->xvel;
@@ -380,6 +440,7 @@ void velocity_movement_handler(MOB *m) {
 		}
 		m->x_counter.sprite_move_timer = m->x_counter.sprite_move_interval;
 	}
+	
 	if ((m->y_counter.sprite_move_timer--) == 0) {
 		m->y += m->yvel;
 		if (m->y < Y_MIN) {
@@ -391,24 +452,29 @@ void velocity_movement_handler(MOB *m) {
 		m->y_counter.sprite_move_timer = m->y_counter.sprite_move_interval;
 	}
 		
-		
-	assert(m->coll_handler != NULL);
 	if ((ct != CT_NONE) ) {
-		//printf("calling collision handler...\n");
-		m->coll_handler(m, ct);
+		m->coll_handler(mob_num, ct);
 	}
+	STOP_TIMER();
 }
    
-void next_sprite_ptr(MOB *m) {
+void next_sprite_ptr(byte mob_num) {
+	MOB *m;
+	
+	m=mobs+mob_num;
 	m->sprite_ptr_num = (m->sprite_ptr_num +(byte)1) % (m->sprite_ptrs_len);
 	sprite_data_vicptr[m->sprite_num]=m->sprite_ptrs[m->sprite_ptr_num];
 
 }
 
-void prev_sprite_ptr(MOB *m) {
+void prev_sprite_ptr(byte mob_num) {
+	MOB *m;
+	
+	m=mobs+mob_num;
 	m->sprite_ptr_num = (m->sprite_ptr_num -(byte)1) % (m->sprite_ptrs_len);
 	sprite_data_vicptr[m->sprite_num]=m->sprite_ptrs[m->sprite_ptr_num];
 	
 }
 
 
+			
